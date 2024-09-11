@@ -1,13 +1,13 @@
 import { useState, useEffect } from "react";
-import { useNavigate, useLocation } from "react";
+import { useNavigate, useLocation } from "react-router-dom";
 import { Form, Formik } from "formik";
-import login from "../assets/login";
+import login from "../assets/login.svg";
 
 const LoginPage = () => {
 	useEffect(() => {
-		document.title = `PeopleSol - Create Company Car`;
+		document.title = `Login`;
 		return () => {
-			document.title = "PeopleSol";
+			document.title = "Login";
 		};
 	}, []);
 
@@ -70,11 +70,7 @@ const LoginPage = () => {
 								<div style={{ width: "100%" }} className="">
 									<div className="createFootCust">
 										<div>
-											<button
-												onClick={handleClose}
-												className="createFooterButtonForm1"
-												type="cancel"
-											>
+											<button className="createFooterButtonForm1" type="cancel">
 												Cancel
 											</button>
 										</div>

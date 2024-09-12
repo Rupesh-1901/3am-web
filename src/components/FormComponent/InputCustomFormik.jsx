@@ -1,8 +1,7 @@
 import { ErrorMessage, Field } from "formik";
-import React from "react";
 import { TextError } from "./TextError";
 import { MyInput } from "./MyInput";
-import { useEffect } from "react";
+import PropTypes from "prop-types";
 
 export const InputCustomFormik = (props) => {
   const { name, style, className, disabled, formikWidth, value } = props;

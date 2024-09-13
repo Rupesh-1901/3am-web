@@ -13,7 +13,7 @@ import { tempLogin } from "../../features/auth/authSlice";
 
 const ForgotPassword = () => {
 	useEffect(() => {
-		document.title = `Forgot Password`;
+		document.title = `JobSeeker - Forgot Password`;
 		return () => {
 			document.title = "JobSeeker";
 		};

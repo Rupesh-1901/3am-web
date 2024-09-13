@@ -11,7 +11,7 @@ import { tempLogin } from "../../features/auth/authSlice";
 
 const ResetPassword = () => {
 	useEffect(() => {
-		document.title = `Reset Password`;
+		document.title = `JobSeeker - Reset Password`;
 		return () => {
 			document.title = "JobSeeker";
 		};

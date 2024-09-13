@@ -23,7 +23,7 @@ const LoginPage = () => {
 	const initialvalue = { email: "", password: "" };
 	console.log("object formValues", formValues);
 	useEffect(() => {
-		document.title = `Login`;
+		document.title = `JobSeeker - Login`;
 		return () => {
 			document.title = "JobSeeker";
 		};

@@ -1,5 +1,17 @@
+import { useEffect } from "react";
+
 const HomePage = () => {
-  return <div>welcome to home</div>;
+	useEffect(() => {
+		document.title = `JobSeeker - Home`;
+		return () => {
+			document.title = "JobSeeker";
+		};
+	}, []);
+	return (
+		<div>
+			<div></div>
+		</div>
+	);
 };
 
 export default HomePage;

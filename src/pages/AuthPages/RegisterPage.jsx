@@ -14,7 +14,7 @@ import { CheckBoxCustom } from "../../components/FormComponent/CheckBoxCustom";
 
 const RegisterPage = () => {
 	useEffect(() => {
-		document.title = `Create Account`;
+		document.title = `JobSeeker - Create Account`;
 		return () => {
 			document.title = "JobSeeker";
 		};

@@ -1,9 +1,14 @@
-import { Outlet } from "react-router-dom";
+import { Outlet, useLocation, Navigate } from "react-router-dom";
+import { useSelector } from "react-redux";
+
 const AuthRequired = () => {
-	return (
-		<>
-			<Outlet />
-		</>
+	const { isTempLogin } = useSelector((state) => state.auth);
+	const location = useLocation();
+	console.log("object isTempLogin", isTempLogin);
+	return isTempLogin ? (
+		<Outlet />
+	) : (
+		<Navigate state={{ from: location }} to="/auth/login" replace />
 	);
 };
 

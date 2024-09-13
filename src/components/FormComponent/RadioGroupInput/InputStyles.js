@@ -1,58 +1,58 @@
 import styled from "styled-components";
-import Ticks from "../../../Assets/Ticks.svg";
+import Ticks from "../../../assets/Ticks.svg";
 export const Label = styled.label`
-  font-weight: 500;
-  font-size: 12px;
-  color: #555555;
-  ${({ disabled }) =>
-    disabled &&
-    `
+	font-weight: 500;
+	font-size: 12px;
+	color: #555555;
+	${({ disabled }) =>
+		disabled &&
+		`
     cursor: not-allowed;
     color: blue!important;
   `}
 `;
 
 export const Radio = styled.input`
-  -webkit-appearance: none;
-  -webkit-appearance: none;
-  appearance: none;
-  cursor: pointer;
-  width: 16px;
-  height: 16px;
-  border: 0.5px solid #ffffff;
-  background: #eeeeee;
-  box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.06);
-  border-radius: 50%;
-  border-radius: 50%;
-  ::after {
-    content: "";
-    border: 0.5px solid #ffffff;
-    display: block;
-    border-radius: 50%;
-    width: 13px;
-    height: 13px;
-  }
-  :checked {
-    ::after {
-      background-color: #1296b0;
-    }
-    :hover {
-      border: 1px solid #1296b038;
-      ::after {
-        background-color: 1296b0;
-      }
-    }
-  }
-  :focus {
-    background: #1296b0;
-  }
-  :hover {
-    ::after {
-      background-color: 1296b0;
-      border: 1px solid #1296b038;
-      box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.06);
-    }
-  }
+	-webkit-appearance: none;
+	-webkit-appearance: none;
+	appearance: none;
+	cursor: pointer;
+	width: 16px;
+	height: 16px;
+	border: 0.5px solid #ffffff;
+	background: #eeeeee;
+	box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.06);
+	border-radius: 50%;
+	border-radius: 50%;
+	::after {
+		content: "";
+		border: 0.5px solid #ffffff;
+		display: block;
+		border-radius: 50%;
+		width: 13px;
+		height: 13px;
+	}
+	:checked {
+		::after {
+			background-color: #1296b0;
+		}
+		:hover {
+			border: 1px solid #1296b038;
+			::after {
+				background-color: 1296b0;
+			}
+		}
+	}
+	:focus {
+		background: #1296b0;
+	}
+	:hover {
+		::after {
+			background-color: 1296b0;
+			border: 1px solid #1296b038;
+			box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.06);
+		}
+	}
 `;
 export const CheckBox = styled.input`
 

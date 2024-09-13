@@ -1,4 +1,6 @@
 import { useEffect } from "react";
+import Tabs from "@mui/material/Tabs";
+import Tab from "@mui/material/Tab";
 
 const HomePage = () => {
 	useEffect(() => {
@@ -9,7 +11,7 @@ const HomePage = () => {
 	}, []);
 	return (
 		<div>
-			<div></div>
+			<div>Welcome to Homepage</div>
 		</div>
 	);
 };

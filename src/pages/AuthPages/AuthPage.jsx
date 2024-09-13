@@ -27,11 +27,14 @@ const AuthPage = () => {
 						gap: "50px",
 					}}
 				>
-					<div>
-						<div style={{ margin: "37px 0px 31px", paddingLeft: "55px" }}>
-							<img style={{ height: "52px" }} src={logo} alt="logo" />
+					<div style={{ margin: "0px auto" }}>
+						<div>
+							<div style={{ margin: "37px 0px 31px", paddingLeft: "55px" }}>
+								<img style={{ height: "52px" }} src={logo} alt="logo" />
+							</div>
+
+							<Outlet />
 						</div>
-						<Outlet />
 					</div>
 					<div style={{ height: "100%" }}>
 						<img style={{ height: "100%" }} src={login} alt="" />

@@ -329,6 +329,7 @@ button:hover {
 	font-family: Inter;
 	font-size: 18px;
 	font-weight: 400;
+	margin-top: 10px;
 }
 .loginLinkColor {
 	font-family: Inter;

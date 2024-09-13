@@ -12,12 +12,6 @@ import { InputCustomFormik } from "../../components/FormComponent/InputCustomFor
 import { tempLogin } from "../../features/auth/authSlice";
 
 const LoginPage = () => {
-	useEffect(() => {
-		document.title = `Login`;
-		return () => {
-			document.title = "JobSeeker";
-		};
-	}, []);
 	const { isTempLogin } = useSelector((state) => state.auth);
 
 	const { state } = useLocation();
@@ -28,6 +22,12 @@ const LoginPage = () => {
 	const navigate = useNavigate();
 	const initialvalue = { email: "", password: "" };
 	console.log("object formValues", formValues);
+	useEffect(() => {
+		document.title = `Login`;
+		return () => {
+			document.title = "JobSeeker";
+		};
+	}, []);
 	// const create = async (values, url) => {
 	// 	try {
 	// 		dispatch(isLoading(true));
@@ -162,7 +162,13 @@ const LoginPage = () => {
 											Log In
 										</button>
 									</div>
-									<div style={{ margin: "10px 0px" }} className="loginLinkColor">
+									<div
+										style={{ margin: "10px 0px" }}
+										className="loginLinkColor"
+										onClick={() => {
+											navigate("/auth/forgot-password");
+										}}
+									>
 										Forgot Password
 									</div>
 									<div style={{ margin: "25px 0px", textAlign: "center", fontSize: "18px" }}>

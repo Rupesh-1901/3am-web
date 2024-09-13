@@ -5,6 +5,8 @@ import NoAuth from "./layouts/NoAuth";
 import AuthRequired from "./layouts/AuthRequired";
 import AuthPage from "./pages/AuthPages/AuthPage";
 import LoginPage from "./pages/AuthPages/LoginPage";
+import ForgotPassword from "./pages/AuthPages/ForgotPassword";
+import ResetPassword from "./pages/AuthPages/ResetPassword";
 
 const router = new createBrowserRouter([
 	{
@@ -24,13 +26,13 @@ const router = new createBrowserRouter([
 					},
 					{
 						path: "forgot-password",
-						element: <RegisterPage />, // will rename component after i create it
+						element: <ForgotPassword />,
 					},
 				],
 			},
 			{
 				path: "/reset-password",
-				element: <AuthPage />, // will rename component after i create it
+				element: <ResetPassword />,
 			},
 		],
 	},

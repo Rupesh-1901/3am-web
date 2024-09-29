@@ -10,7 +10,7 @@
 html,
 body {
 	height: 100vh;
-	overflow: hidden;
+	/* overflow: hidden; */
 }
 
 img {
@@ -28,7 +28,7 @@ body {
 	margin: 0;
 	font-family: Inter;
 	font-size: 18px;
-	font-weight: 500;
+	font-weight: 400;
 }
 
 #root {
@@ -36,7 +36,7 @@ body {
 }
 
 body::-webkit-scrollbar {
-	width: 0rem;
+	width: 10px;
 }
 
 body::-webkit-scrollbar-track {

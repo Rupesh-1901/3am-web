@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { useNavigate, useLocation } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { Form, Formik } from "formik";
 import { useDispatch, useSelector } from "react-redux";
 import candidateLogin from "../../assets/candidateLogin.svg";
@@ -14,7 +14,6 @@ import { tempLogin } from "../../features/auth/authSlice";
 const LoginPage = () => {
 	const { isTempLogin } = useSelector((state) => state.auth);
 
-	const { state } = useLocation();
 	const dispatch = useDispatch();
 	const [formValues, setFormValues] = useState(null);
 	const [password, setPassword] = useState("password");
@@ -28,25 +27,20 @@ const LoginPage = () => {
 			document.title = "JobSeeker";
 		};
 	}, []);
-	// const create = async (values, url) => {
-	// 	try {
-	// 		dispatch(isLoading(true));
-	// 		setLoading(true);
-	// 		const result = await postRequest(url, values);
-	// 		if (result) dispatch(showToast({ text: "Successfully Created", severity: "success" }));
-	// 		returnPage();
-	// 	} catch (error) {
-	// 		dispatch(
-	// 			showToast({
-	// 				text: error?.response?.data?.title ?? "some error occured",
-	// 				severity: "error",
-	// 			})
-	// 		);
-	// 	} finally {
-	// 		dispatch(isLoading(false));
-	// 		setLoading(false);
-	// 	}
-	// };
+	// 	const create = async (values, url) => {
+	// 		try {
+
+	// 			const result = await postRequest("api/users/login", values);
+	// 			if (result)
+	// 			returnPage();
+	// 		} catch {
+
+	// 		} finally {
+	// 		}
+	// 	};
+	// useEffect(() => {
+	// 	create()
+	// }, [])
 
 	console.log("formValues", formValues);
 
@@ -59,10 +53,6 @@ const LoginPage = () => {
 	};
 	console.log("object isTempLogin", isTempLogin);
 
-	const returnPage = () => {
-		if (state?.returnUrl) navigate(state?.returnUrl);
-		else navigate(-1);
-	};
 	const chooseFormValues = (values) => {
 		setFormValues(values);
 	};

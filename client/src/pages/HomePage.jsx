@@ -31,7 +31,7 @@ const HomePage = () => {
 							Aliquam vitae turpis in diam convallis finibus in at risus. Nullam in scelerisque leo,
 							eget sollicitudin velit bestibulum.{" "}
 						</div>
-						<img style={{ margin: "0px -25px" }} src={homePageHeroSearch} alt="" />
+						{/* <img style={{ margin: "0px -25px" }} src={homePageHeroSearch} alt="" /> */}
 					</div>
 				</div>
 			</section>

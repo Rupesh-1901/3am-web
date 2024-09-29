@@ -1,0 +1,226 @@
+.homeSectionWidth {
+	width: 1324px;
+	padding: 40px 20px;
+}
+
+.heroSection {
+	display: flex;
+	justify-content: space-between;
+}
+.heroSection > img {
+	display: flex;
+	width: 45%;
+}
+.heroSection > div {
+	display: flex;
+	width: 45%;
+}
+.headingTopography {
+	font-family: Inter;
+	font-size: 49px;
+	font-weight: 700;
+	line-height: 64px;
+	text-align: left;
+	color: #0a65cc;
+	margin-bottom: 10px;
+}
+.headingTopography2 {
+	font-family: Inter;
+	font-size: 42px;
+	font-weight: 400;
+	line-height: 64px;
+	text-align: left;
+	color: #656565;
+	margin-bottom: 10px;
+}
+.headingTopography3 {
+	font-family: Inter;
+	font-size: 18px;
+	font-weight: 400;
+	line-height: 28px;
+	text-align: left;
+	color: #656565;
+	width: calc(100% - 74px);
+	margin-bottom: 10px;
+}
+.section2 {
+	width: 900px;
+	display: flex;
+	align-items: flex-start;
+	justify-content: space-around;
+	gap: 50px;
+	/* background-color: #f1f2f4; */
+}
+.section2Img {
+	width: 100px;
+	margin-bottom: 10px;
+}
+.section2NumberFont {
+	font-family: Inter;
+	font-size: 20px;
+	font-weight: 500;
+	line-height: 40px;
+	text-align: center;
+	color: #18191c;
+}
+.section2Font {
+	font-family: Inter;
+	font-size: 18px;
+	font-weight: 400;
+	line-height: 30px;
+	text-align: center;
+	color: #767f8c;
+}
+.styledUnderline {
+	background-color: #0a65cc;
+	height: 10px;
+	width: 100px;
+}
+.section3Heading {
+	font-family: Inter;
+	font-size: 35px;
+	font-weight: 700;
+	line-height: 51.71px;
+	text-align: left;
+	color: #000300;
+	margin-bottom: 10px;
+}
+.section4 {
+	display: flex;
+	align-items: center;
+	justify-content: flex-start;
+	gap: 50px;
+	flex-direction: column;
+	background-color: #f1f2f4;
+}
+.section4Img {
+	width: 100%;
+}
+.vacanciesName {
+	font-family: Inter;
+	font-size: 19.39px;
+	font-weight: 500;
+	line-height: 30.17px;
+	text-align: left;
+	color: #0a65cc;
+}
+.vacanciesNumber {
+	font-family: Inter;
+	font-size: 14px;
+	font-weight: 500;
+	line-height: 30.17px;
+	text-align: left;
+	color: #767f8c;
+}
+.vacanciesBox {
+	width: 300px;
+	display: flex;
+	flex-direction: column;
+	gap: 6px;
+}
+.vacanciesCover {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 30px 27px;
+	justify-content: space-between;
+}
+.featuredJobButton {
+	border: 1.08px solid #e7f0fa;
+	color: #0a65cc;
+	padding: 10px 10px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	gap: 10px;
+	height: fit-content;
+}
+.job-box {
+	box-shadow: 0px 2.16px 19.44px 0px #18191c08;
+	border: 1.08px solid #e4e5e8;
+	padding: 17px;
+	width: 400px;
+	border-radius: 8px;
+}
+.job-header {
+}
+.job-title {
+	font-family: Inter;
+	font-size: 20px;
+	font-weight: 500;
+	line-height: 30.25px;
+	text-align: left;
+	color: #18191c;
+	margin-bottom: 5px;
+}
+.job-type {
+	color: #0ba02c;
+	font-family: Inter;
+	font-size: 12.96px;
+	font-weight: 600;
+	line-height: 12.96px;
+	text-align: left;
+	padding: 5px 7px;
+	border-radius: 3.5px;
+	background-color: #e7f6ea;
+}
+.job-headerDIv {
+	display: flex;
+	justify-content: flex-start;
+	margin-bottom: 28px;
+}
+.salary {
+	font-family: Inter;
+	font-size: 15.12px;
+	font-weight: 400;
+	line-height: 21.6px;
+	text-align: left;
+	color: #767f8c;
+	margin-left: 10px;
+}
+.company-details {
+	display: flex;
+	justify-content: start;
+	align-items: center;
+	gap: 13px;
+}
+.company-name {
+	color: #18191c;
+	font-family: Inter;
+	font-size: 17.28px;
+	font-weight: 500;
+	line-height: 25.92px;
+	text-align: left;
+}
+.company-location {
+	font-family: Inter;
+	font-size: 15.12px;
+	font-weight: 400;
+	line-height: 21.6px;
+	text-align: left;
+	color: #767f8c;
+	display: flex;
+}
+.registerOption {
+	width: 49%;
+	background-color: #0a65cc;
+	padding: 50px 36px;
+	border-radius: 12px;
+	color: #ffffff;
+}
+.registerOptionHeading {
+	font-family: Inter;
+	font-size: 35px;
+	font-weight: 700;
+	line-height: 51.78px;
+	text-align: left;
+	margin-bottom: 11px;
+}
+.registerOptionContent {
+	font-family: Inter;
+	font-size: 15.12px;
+	font-weight: 400;
+	line-height: 21.6px;
+	text-align: left;
+	width: 300px;
+	margin-bottom: 25px;
+}

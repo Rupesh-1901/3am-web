@@ -339,3 +339,121 @@ button:hover {
 	text-decoration: underline;
 	text-decoration-color: #0a65cc;
 }
+.slick-prev,
+.slick-next {
+	font-size: 0;
+	line-height: 0;
+	position: absolute;
+	top: 50%;
+	display: block;
+	width: 50px !important;
+	height: 50px !important;
+	border-radius: 12px !important;
+	padding: 0;
+	-webkit-transform: translate(0, -50%);
+	-ms-transform: translate(0, -50%);
+	transform: translate(0, -50%);
+	cursor: pointer;
+	color: red !important;
+	border: none;
+	outline: none;
+	background: red !important;
+}
+.slick-next {
+	right: -70px !important;
+}
+.slick-prev {
+	left: -70px !important;
+}
+.slider-containerdefault {
+	width: 1282px;
+}
+
+.CarousalNext {
+	position: absolute;
+	top: 50%;
+	transform: translate(0, -50%);
+	z-index: 10;
+	right: -72px;
+	pointer-events: none;
+}
+.CarousalPrev {
+	position: absolute;
+	top: 50%;
+	transform: translate(0, -50%);
+	z-index: 10;
+	left: -72px;
+	pointer-events: none;
+}
+.stars {
+	display: flex;
+	gap: 4px;
+	margin-bottom: 15px;
+}
+.testimonial-card {
+	width: 400px;
+	background-color: white;
+	border-radius: 12px;
+	padding: 20px;
+	box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+.testimonial-text {
+	color: #464d61;
+	font-family: Inter;
+	font-size: 15px;
+	font-weight: 400;
+	line-height: 25.92px;
+	text-align: left;
+	margin-bottom: 45px;
+}
+.user-info {
+	display: flex;
+	align-items: center;
+}
+.user-infocover {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+}
+.user-name {
+	color: #191f33;
+	font-family: Inter;
+	font-size: 15px;
+	font-weight: 500;
+	line-height: 25.92px;
+	text-align: left;
+}
+.user-title {
+	color: #767e94;
+	font-family: Inter;
+	font-size: 13px;
+	font-weight: 400;
+	line-height: 21.6px;
+	text-align: left;
+}
+.slick-dots {
+	position: absolute;
+	bottom: -49px !important;
+	display: block;
+	width: 100%;
+	padding: 0;
+	margin: 0;
+	list-style: none;
+	text-align: center;
+}
+.slick-dots li button:before {
+	font-family: "slick";
+	font-size: 14px !important;
+	line-height: 20px;
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 20px;
+	height: 20px;
+	content: "•";
+	text-align: center;
+	opacity: 0.25;
+	color: black;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}

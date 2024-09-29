@@ -33,6 +33,13 @@ const Navbar = () => {
 						label={
 							<span className={`tabHeading ${tabIndex === 0 && "tabActive"}`}>{item?.name}</span>
 						}
+						sx={{
+							fontFamily: "Inter, sans-serif", // Font family
+							fontSize: "15.12px", // Font size
+							fontWeight: 400, // Font weight
+							lineHeight: "21.6px", // Line height
+							textTransform: "none", // Prevent uppercase transformation
+						}}
 					/>
 				))}
 			</Tabs>

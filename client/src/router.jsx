@@ -1,4 +1,3 @@
-import HomePage from "./pages/HomePage";
 import { createBrowserRouter } from "react-router-dom";
 import RegisterPage from "./pages/AuthPages/RegisterPage";
 import NoAuth from "./layouts/NoAuth";
@@ -7,6 +6,7 @@ import AuthPage from "./pages/AuthPages/AuthPage";
 import LoginPage from "./pages/AuthPages/LoginPage";
 import ForgotPassword from "./pages/AuthPages/ForgotPassword";
 import ResetPassword from "./pages/AuthPages/ResetPassword";
+import HomePage from "./pages/Home/HomePage";
 
 const router = new createBrowserRouter([
 	{

@@ -316,8 +316,8 @@ const HomePage = () => {
 						</div>
 						{/* <img style={{ margin: "0px -25px" }} src={homePageHeroSearch} alt="" /> */}
 					</div>
-					<div className="searchInput">
-						<div className="search-bar-container" style={{ width: "621px" }}>
+					<div className="searchInput" style={{ margin: "25px 0px" }}>
+						<div className="search-bar-container" style={{ width: "700px", padding: "5px 10px" }}>
 							{/* Search Icon */}
 							<span className="search-icon">
 								<svg
@@ -349,7 +349,7 @@ const HomePage = () => {
 								type="text"
 								className="search-input"
 								placeholder="Job title, keyword word"
-								style={{ width: "152px" }}
+								style={{ width: "200px" }}
 							/>
 							<span
 								className="search-icon"
@@ -379,7 +379,7 @@ const HomePage = () => {
 								</svg>
 							</span>{" "}
 							<input
-								style={{ width: "126px" }}
+								style={{ width: "157px" }}
 								type="text"
 								className="search-input"
 								placeholder="Your Location"
@@ -400,6 +400,10 @@ const HomePage = () => {
 								Search Candidate Database
 							</div>
 						</div>
+					</div>
+					<div style={{ fontSize: "14px" }}>
+						Suggestion: Designer, Programing,{" "}
+						<span style={{ color: "#0A65CC" }}>Digital Marketing</span>,Video,Animation.
 					</div>
 				</div>
 			</section>

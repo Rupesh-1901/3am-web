@@ -224,3 +224,87 @@
 	width: 300px;
 	margin-bottom: 25px;
 }
+.searchSection {
+	display: flex;
+	align-items: center;
+	padding: 17px 0px;
+	justify-content: space-between;
+}
+.searchInput {
+	width: 600px;
+}
+
+.search-bar-container {
+	display: flex;
+	align-items: center;
+	border: 1px solid #e0e0e0; /* Light gray border */
+	border-radius: 8px; /* Rounded corners */
+	padding: 0px 10px; /* Padding inside the input container */
+	width: 100%;
+	background-color: #fff; /* White background */
+}
+
+.search-icon {
+	margin-right: 10px;
+	color: #0a65cc; /* Icon color */
+	font-size: 18px; /* Icon size */
+}
+
+.search-input {
+	border: none; /* Remove default input border */
+	outline: none; /* Remove focus outline */
+	width: 100%; /* Take up the remaining width */
+	font-size: 16px; /* Input text size */
+	color: #333; /* Input text color */
+	padding: 5px;
+}
+
+.country-selector {
+	display: flex;
+	align-items: center;
+	border-left: 1px solid #e0e0e0; /* Border separating country selector */
+	padding-left: 10px;
+	margin-left: 10px;
+	position: relative;
+	width: 134px;
+}
+
+.country-name {
+	font-size: 16px;
+	margin-right: 5px;
+	color: #333;
+}
+
+.country-flag {
+	width: 24px;
+	height: 16px;
+	border-radius: 2px;
+	margin-right: 5px;
+}
+
+.country-dropdown {
+	position: absolute;
+	top: 50px;
+	left: 4px;
+	width: 112px;
+	background-color: white;
+	border: 1.08px solid #e4e5e8;
+}
+.country-dropdown > div {
+	display: flex;
+	padding: 10px 10px;
+	justify-content: center;
+	align-items: center;
+	background-color: white;
+	border: 1.08px solid #e4e5e8;
+}
+
+.search-bar-container2 {
+	display: flex;
+	align-items: center;
+	border: 1px solid #e0e0e0; /* Light gray border */
+	border-radius: 8px; /* Rounded corners */
+	padding: 10px 10px; /* Padding inside the input container */
+	width: 100%;
+	background-color: #fff; /* White background */
+}

@@ -8,6 +8,7 @@ import companiesIcon from "../../assets/companiesIcon.svg";
 import candidatesIcon from "../../assets/candidatesIcon.svg";
 import becomeEmployers from "../../assets/becomeEmployers.svg";
 import viewAllArrow from "../../assets/viewAllArrow.svg";
+import companyLogo from "../../assets/companyLogo.svg";
 import GoogleLogo from "../../assets/GoogleLogo.svg";
 import PopularVacancies from "./PopularVacancies";
 import FeaturedJobs from "./FeaturedJobs";
@@ -22,6 +23,8 @@ const HomePage = () => {
 	}, []);
 	const [arrVacancies, setArrVacancies] = useState([]);
 	const [arrFeaturedJob, setArrFeaturedJob] = useState([]);
+	const [countrySelected, setcountrySelected] = useState("India");
+	const [openSearchDropdown, setopenSearchDropdown] = useState(false);
 	useEffect(() => {
 		setArrVacancies([
 			{ id: 0, name: "Anesthesiologists", openPositions: "45,904 Open Positions" },
@@ -174,9 +177,132 @@ const HomePage = () => {
 	}, []);
 	return (
 		<div style={{ display: "flex", flexDirection: "column", alignItems: "center" }}>
+			<div
+				style={{
+					width: "100%",
+					boxShadow: "0px -1.08px 0px 0px #E4E5E8 inset",
+					padding: "10px 0px",
+					display: "flex",
+					justifyContent: "center",
+				}}
+			>
+				<section className="homeSectionWidth searchSection" style={{ padding: "0px" }}>
+					<div style={{ display: "flex", gap: "50px", alignItems: "center" }}>
+						<div>
+							<img src={companyLogo} alt="" />
+						</div>
+
+						<div className="searchInput">
+							<div className="search-bar-container">
+								{/* Search Icon */}
+								<span className="search-icon">
+									<svg
+										width="27"
+										height="27"
+										viewBox="0 0 27 27"
+										fill="none"
+										xmlns="http://www.w3.org/2000/svg"
+									>
+										<path
+											d="M14.7359 21.3732C9.96323 21.3732 6.09423 17.5042 6.09423 12.7315C6.09423 7.95885 9.96323 4.08984 14.7359 4.08984C19.5086 4.08984 23.3776 7.95885 23.3776 12.7315C23.3776 17.5042 19.5086 21.3732 14.7359 21.3732Z"
+											stroke="#0066FF"
+											stroke-width="1.62031"
+											stroke-linecap="round"
+											stroke-linejoin="round"
+										/>
+										<path
+											d="M3.93378 23.5334L8.63269 18.8345"
+											stroke="#0066FF"
+											stroke-width="1.62031"
+											stroke-linecap="round"
+											stroke-linejoin="round"
+										/>
+									</svg>
+								</span>{" "}
+								{/* You can replace this with an actual icon */}
+								{/* Input Field */}
+								<input
+									type="text"
+									className="search-input"
+									placeholder="Job title, keyword, company"
+								/>
+								{/* Country Selector */}
+								<div
+									className="country-selector"
+									onClick={() => setopenSearchDropdown((prev) => !prev)}
+								>
+									<svg
+										width="13"
+										height="8"
+										viewBox="0 0 13 8"
+										fill="none"
+										xmlns="http://www.w3.org/2000/svg"
+									>
+										<path
+											d="M1.02955 1.68896L6.43059 7.09001L11.8316 1.68896"
+											stroke="#9199A3"
+											stroke-width="1.62031"
+											stroke-linecap="round"
+											stroke-linejoin="round"
+										/>
+									</svg>
+									<div
+										style={{ display: "flex", alignItems: "center", gap: "2px", padding: "10px" }}
+									>
+										{" "}
+										<img
+											src="https://upload.wikimedia.org/wikipedia/en/4/41/Flag_of_India.svg"
+											alt="India Flag"
+											className="country-flag"
+										/>
+										{countrySelected}
+									</div>
+									{openSearchDropdown && (
+										<div className="country-dropdown">
+											<div onClick={() => setcountrySelected("India")}>
+												<img
+													src="https://upload.wikimedia.org/wikipedia/en/4/41/Flag_of_India.svg"
+													alt="India Flag"
+													className="country-flag"
+												/>
+												India
+											</div>
+										</div>
+									)}
+								</div>
+							</div>
+						</div>
+					</div>
+					<div style={{ display: "flex", gap: "20px", alignItems: "center" }}>
+						<div>
+							{" "}
+							<div
+								className="featuredJobButton"
+								style={{ border: " 1.08px solid #CCCCCC", borderRadius: "10px", fontSize: "16px" }}
+							>
+								View All
+							</div>
+						</div>
+						<div>
+							{" "}
+							<div
+								className="featuredJobButton"
+								style={{
+									backgroundColor: "#0A65CC",
+									color: "white",
+									borderRadius: "10px",
+									fontSize: "16px",
+								}}
+							>
+								Post A Job
+							</div>
+						</div>
+					</div>
+				</section>
+			</div>
 			<section className="homeSectionWidth heroSection">
 				<img src={heroSectionImg} alt="" />
-				<div>
+				<div style={{ display: "flex", flexDirection: "column" }}>
 					<div>
 						<div className="headingTopography">Connecting Providers with Seekers </div>
 						<div className="headingTopography2">
@@ -189,6 +315,91 @@ const HomePage = () => {
 							eget sollicitudin velit bestibulum.{" "}
 						</div>
 						{/* <img style={{ margin: "0px -25px" }} src={homePageHeroSearch} alt="" /> */}
+					</div>
+					<div className="searchInput">
+						<div className="search-bar-container" style={{ width: "621px" }}>
+							{/* Search Icon */}
+							<span className="search-icon">
+								<svg
+									width="27"
+									height="27"
+									viewBox="0 0 27 27"
+									fill="none"
+									xmlns="http://www.w3.org/2000/svg"
+								>
+									<path
+										d="M14.7359 21.3732C9.96323 21.3732 6.09423 17.5042 6.09423 12.7315C6.09423 7.95885 9.96323 4.08984 14.7359 4.08984C19.5086 4.08984 23.3776 7.95885 23.3776 12.7315C23.3776 17.5042 19.5086 21.3732 14.7359 21.3732Z"
+										stroke="#0066FF"
+										stroke-width="1.62031"
+										stroke-linecap="round"
+										stroke-linejoin="round"
+									/>
+									<path
+										d="M3.93378 23.5334L8.63269 18.8345"
+										stroke="#0066FF"
+										stroke-width="1.62031"
+										stroke-linecap="round"
+										stroke-linejoin="round"
+									/>
+								</svg>
+							</span>{" "}
+							{/* You can replace this with an actual icon */}
+							{/* Input Field */}
+							<input
+								type="text"
+								className="search-input"
+								placeholder="Job title, keyword word"
+								style={{ width: "152px" }}
+							/>
+							<span
+								className="search-icon"
+								style={{ borderLeft: "1px solid #e0e0e0", paddingLeft: "10px" }}
+							>
+								<svg
+									width="24"
+									height="24"
+									viewBox="0 0 24 24"
+									fill="none"
+									xmlns="http://www.w3.org/2000/svg"
+								>
+									<path
+										d="M21 10C21 17 12 23 12 23C12 23 3 17 3 10C3 7.61305 3.94821 5.32387 5.63604 3.63604C7.32387 1.94821 9.61305 1 12 1C14.3869 1 16.6761 1.94821 18.364 3.63604C20.0518 5.32387 21 7.61305 21 10Z"
+										stroke="#0066FF"
+										stroke-width="1.5"
+										stroke-linecap="round"
+										stroke-linejoin="round"
+									/>
+									<path
+										d="M12 13C13.6569 13 15 11.6569 15 10C15 8.34315 13.6569 7 12 7C10.3431 7 9 8.34315 9 10C9 11.6569 10.3431 13 12 13Z"
+										stroke="#0066FF"
+										stroke-width="1.5"
+										stroke-linecap="round"
+										stroke-linejoin="round"
+									/>
+								</svg>
+							</span>{" "}
+							<input
+								style={{ width: "126px" }}
+								type="text"
+								className="search-input"
+								placeholder="Your Location"
+							/>
+							<div
+								className="featuredJobButton"
+								style={{
+									backgroundColor: "#0A65CC",
+									color: "white",
+									borderRadius: "10px",
+									fontSize: "16px",
+									height: "57px",
+									padding: "10px 14px",
+
+									margin: "10px 0px",
+								}}
+							>
+								Search Candidate Database
+							</div>
+						</div>
 					</div>
 				</div>
 			</section>

@@ -13,6 +13,8 @@ const Navbar = () => {
 		{ id: 4, name: "Customer Support", isActive: false },
 	]);
 	const [tabIndex, setTabIndex] = useState(0);
+	const [openSearchDropdown, setopenSearchDropdown] = useState(false);
+
 	const handleTabChange = (event, newTabIndex) => {
 		setTabIndex(newTabIndex);
 	};
@@ -59,12 +61,48 @@ const Navbar = () => {
 			</ul> */}
 			<div className="navbar-actions">
 				<div className="search-bar">
-					{/* <select>
-						<option value="India">India</option>
-						<option value="USA">USA</option>
-						<option value="Germany">Germany</option>
-					</select> */}
-					{/* <img src={searchSvg} alt="" /> */}
+					<div
+						className="country-selector"
+						style={{ borderLeft: "none" }}
+						onClick={() => setopenSearchDropdown((prev) => !prev)}
+					>
+						<svg
+							width="13"
+							height="8"
+							viewBox="0 0 13 8"
+							fill="none"
+							xmlns="http://www.w3.org/2000/svg"
+						>
+							<path
+								d="M1.02955 1.68896L6.43059 7.09001L11.8316 1.68896"
+								stroke="#9199A3"
+								stroke-width="1.62031"
+								stroke-linecap="round"
+								stroke-linejoin="round"
+							/>
+						</svg>
+						<div style={{ display: "flex", alignItems: "center", gap: "2px", padding: "10px" }}>
+							{" "}
+							<img
+								src="https://upload.wikimedia.org/wikipedia/en/4/41/Flag_of_India.svg"
+								alt="India Flag"
+								className="country-flag"
+							/>
+							English
+						</div>
+						{openSearchDropdown && (
+							<div className="country-dropdown" style={{ left: "26px" }}>
+								<div>
+									<img
+										src="https://upload.wikimedia.org/wikipedia/en/4/41/Flag_of_India.svg"
+										alt="India Flag"
+										className="country-flag"
+									/>
+									English
+								</div>
+							</div>
+						)}
+					</div>
 				</div>
 			</div>
 		</div>

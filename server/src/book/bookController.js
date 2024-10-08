@@ -4,7 +4,7 @@ import path from "node:path";
 import fs from "node:fs";
 import cloudinary from "../config/cloudinary";
 import createHttpError from "http-errors";
-import bookModel from "./bookModel";
+import bookModel from "./bookModel.js";
 
 const createBook = async (req, res, next) => {
   const { title, genre, description } = req.body;

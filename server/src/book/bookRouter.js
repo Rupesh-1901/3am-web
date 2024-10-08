@@ -6,9 +6,9 @@ import {
   getSingleBook,
   listBooks,
   updateBook,
-} from "./bookController";
+} from "./bookController.js";
 import multer from "multer";
-import authenticate from "../middlewares/authenticate";
+import authenticate from "../middlewares/authenticate.js";
 
 const bookRouter = express.Router();
 

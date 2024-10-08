@@ -1,6 +1,6 @@
 import createHttpError from "http-errors";
 import { verify } from "jsonwebtoken";
-import { config } from "../config/config";
+import { config } from "../config/config.js";
 
 const authenticate = (req, res, next) => {
   const token = req.header("Authorization");

@@ -2,6 +2,8 @@
 CREATE TABLE "User" (
     "id" BIGSERIAL NOT NULL,
     "email" TEXT NOT NULL,
+    "fullName" TEXT NOT NULL,
+    "userName" TEXT NOT NULL,
     "password" TEXT NOT NULL,
     "loginType" TEXT NOT NULL,
     "createdAt" TIMESTAMP(3) NOT NULL DEFAULT CURRENT_TIMESTAMP,

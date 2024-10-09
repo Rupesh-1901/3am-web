@@ -9,7 +9,10 @@ import visibilityOnIcon from "../../assets/visibilityOnIcon.svg";
 import signupGoogle from "../../assets/signupGoogle.svg";
 import signupFacebook from "../../assets/signupFacebook.svg";
 import { InputCustomFormik } from "../../components/FormComponent/InputCustomFormik";
+import axios from "axios";
+
 import { tempLogin } from "../../features/auth/authSlice";
+import { showToast } from "../../features/ToastSlice";
 
 const LoginPage = () => {
 	const { isTempLogin } = useSelector((state) => state.auth);
@@ -27,29 +30,39 @@ const LoginPage = () => {
 			document.title = "JobSeeker";
 		};
 	}, []);
-	// 	const create = async (values, url) => {
-	// 		try {
-
-	// 			const result = await postRequest("api/users/login", values);
-	// 			if (result)
-	// 			returnPage();
-	// 		} catch {
-
-	// 		} finally {
-	// 		}
-	// 	};
-	// useEffect(() => {
-	// 	create()
-	// }, [])
+	const create = async (payload) => {
+		try {
+			const response = await axios.post("http://localhost:5513" + "/api/users/login", payload);
+			console.log(response.data);
+			dispatch(
+				showToast({
+					text: "Login uccessful",
+					severity: "success",
+				})
+			);
+			dispatch(tempLogin(true));
+			navigate("/home");
+		} catch (error) {
+			dispatch(
+				showToast({
+					text: error?.response?.data ?? "Login Failed",
+					severity: "error",
+				})
+			);
+			dispatch(tempLogin(false));
+		} finally {
+		}
+	};
 
 	console.log("formValues", formValues);
 
 	const onSubmit = (values) => {
-		console.log("object values", values);
-		if (values?.email === "rupesh" && values?.password === "rupesh" && selectedMode === "empl") {
-			dispatch(tempLogin(true));
-			navigate("/home");
-		} else dispatch(tempLogin(false));
+		create(values);
+		// console.log("object values", values);
+		// if (values?.email === "rupesh" && values?.password === "rupesh" && selectedMode === "empl") {
+		// 	dispatch(tempLogin(true));
+		// 	navigate("/home");
+		// } else dispatch(tempLogin(false));
 	};
 	console.log("object isTempLogin", isTempLogin);
 

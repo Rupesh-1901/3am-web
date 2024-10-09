@@ -27,7 +27,14 @@ const RegisterPage = () => {
 	const [password, setPassword] = useState("password");
 	const [selectedMode, setSelectedMode] = useState("empl");
 	const navigate = useNavigate();
-	const initialvalue = { email: "", password: "" };
+	const initialvalue = {
+		fullName: "",
+		userName: "",
+		email: "",
+		password: "",
+		confirmpassword: "",
+		termsAndConditions: "",
+	};
 	console.log("object formValues", formValues);
 	// const create = async (values, url) => {
 	// 	try {

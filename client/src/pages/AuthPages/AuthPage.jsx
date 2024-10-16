@@ -27,14 +27,14 @@ const AuthPage = () => {
 				<div style={{ margin: "0px auto" }}>
 					<div>
 						<div style={{ margin: "37px 0px 31px", paddingLeft: "55px" }}>
-							<img style={{ height: "52px" }} src={logo} alt="logo" />
+							<img style={{ height: "52px" }} src={logo} alt="logo" loading="lazy" />
 						</div>
 
 						<Outlet />
 					</div>
 				</div>
 				<div style={{ height: "100%" }}>
-					<img style={{ height: "100%" }} src={login} alt="" />
+					<img style={{ height: "100%" }} src={login} alt="" loading="lazy" />
 				</div>
 			</section>
 		</>

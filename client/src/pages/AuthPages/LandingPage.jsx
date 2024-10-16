@@ -263,6 +263,7 @@ const LandingPage = () => {
 							}}
 							src={announcementLanding}
 							alt=""
+							loading="lazy"
 						/>
 						<div style={{ display: "flex", flexDirection: "column", width: "40%" }}>
 							<div>

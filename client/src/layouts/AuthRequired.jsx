@@ -20,7 +20,7 @@ const AuthRequired = () => {
 			</div>
 		</div>
 	) : (
-		<Navigate state={{ from: location }} to="/auth/login" replace />
+		<Navigate state={{ from: location }} to="/landing" replace />
 	);
 };
 

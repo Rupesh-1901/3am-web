@@ -18,10 +18,10 @@ const AuthPage = () => {
 			<section
 				style={{
 					width: "100%",
-					height: "100%",
 					display: "flex",
 					justifyContent: "space-between",
 					gap: "50px",
+					height: "100vh",
 				}}
 			>
 				<div style={{ margin: "0px auto" }}>

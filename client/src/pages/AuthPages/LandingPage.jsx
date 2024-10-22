@@ -3,10 +3,10 @@ import "./LandingPage.css";
 import heroSectionImg from "../../assets/heroSectionImg.svg";
 import announcementLanding from "../../assets/announcementLanding.png";
 import liveJob from "../../assets/liveJob.svg";
-import becomeCandidate from "../../assets/becomeCandidate.svg";
+import landingBullets from "../../assets/landingBullets.svg";
 import companiesIcon from "../../assets/companiesIcon.svg";
 import candidatesIcon from "../../assets/candidatesIcon.svg";
-import becomeEmployers from "../../assets/becomeEmployers.svg";
+import landingBulletsWhite from "../../assets/landingBulletsWhite.svg";
 import viewAllArrow from "../../assets/viewAllArrow.svg";
 import companyLogo from "../../assets/companyLogo.svg";
 import GoogleLogo from "../../assets/GoogleLogo.svg";
@@ -16,6 +16,7 @@ import SimpleSlider from "../../components/ui/SimpleSlider";
 import Navbar from "../../components/ui/Navbar";
 import NavigationFooter from "../../components/ui/NavigationFooter";
 import { useNavigate } from "react-router-dom";
+import ReactPlayer from "react-player";
 
 const LandingPage = () => {
 	useEffect(() => {
@@ -254,7 +255,10 @@ const LandingPage = () => {
 							</div>
 						</div>
 					</section>
-					<section className="heroSection" style={{ justifyContent: "flex-start" }}>
+					<section
+						className="heroSection"
+						style={{ marginBottom: "110px", justifyContent: "flex-start" }}
+					>
 						<img
 							style={{
 								height: "1151px",
@@ -289,9 +293,204 @@ const LandingPage = () => {
 									finibus in at risus. Nullam in scelerisque leo, eget sollicitudin velit
 									bestibulum.{" "}
 								</div>
-								{/* <img style={{ margin: "0px -25px" }} src={homePageHeroSearch} alt="" /> */}
+								<div
+									className="whatWedoBox"
+									style={{
+										width: "563px",
+										backgroundColor: "#D9D9D9",
+										borderRadius: "30px",
+										padding: "73px 49px",
+										display: "flex",
+										alignItems: "center",
+										justifyContent: "flex-start",
+										marginTop: "50px",
+									}}
+								>
+									<img
+										className="whatWedoBoxBullets"
+										style={{ flexShrink: "0", width: "100px", height: "101px" }}
+										src={landingBullets}
+										alt=""
+									/>
+									<img
+										className="whatWedoBoxBulletsWhite"
+										style={{ flexShrink: "0", width: "100px", height: "101px" }}
+										src={landingBulletsWhite}
+										alt=""
+									/>
+
+									<div style={{ paddingLeft: "13px" }} className="whatWedoBoxContent">
+										Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi aliquid sunt
+										maiores at nihil quo, dicta velit perferendis temporibus nemo?
+									</div>
+								</div>
+								<div
+									className="whatWedoBox"
+									style={{
+										width: "563px",
+										backgroundColor: "#D9D9D9",
+										borderRadius: "30px",
+										padding: "73px 49px",
+										display: "flex",
+										alignItems: "center",
+										justifyContent: "flex-start",
+										marginTop: "50px",
+									}}
+								>
+									<img
+										className="whatWedoBoxBullets"
+										style={{ flexShrink: "0", width: "100px", height: "101px" }}
+										src={landingBullets}
+										alt=""
+									/>
+									<img
+										className="whatWedoBoxBulletsWhite"
+										style={{ flexShrink: "0", width: "100px", height: "101px" }}
+										src={landingBulletsWhite}
+										alt=""
+									/>
+
+									<div style={{ paddingLeft: "13px" }} className="whatWedoBoxContent">
+										Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi aliquid sunt
+										maiores at nihil quo, dicta velit perferendis temporibus nemo?
+									</div>
+								</div>
+								<div
+									className="whatWedoBox"
+									style={{
+										width: "563px",
+										backgroundColor: "#D9D9D9",
+										borderRadius: "30px",
+										padding: "73px 49px",
+										display: "flex",
+										alignItems: "center",
+										justifyContent: "flex-start",
+										marginTop: "50px",
+									}}
+								>
+									<img
+										className="whatWedoBoxBullets"
+										style={{ flexShrink: "0", width: "100px", height: "101px" }}
+										src={landingBullets}
+										alt=""
+									/>
+									<img
+										className="whatWedoBoxBulletsWhite"
+										style={{ flexShrink: "0", width: "100px", height: "101px" }}
+										src={landingBulletsWhite}
+										alt=""
+									/>
+
+									<div style={{ paddingLeft: "13px" }} className="whatWedoBoxContent">
+										Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi aliquid sunt
+										maiores at nihil quo, dicta velit perferendis temporibus nemo?
+									</div>
+								</div>
+								<div
+									className="whatWedoBox"
+									style={{
+										width: "563px",
+										backgroundColor: "#D9D9D9",
+										borderRadius: "30px",
+										padding: "73px 49px",
+										display: "flex",
+										alignItems: "center",
+										justifyContent: "flex-start",
+										marginTop: "50px",
+									}}
+								>
+									<img
+										className="whatWedoBoxBullets"
+										style={{ flexShrink: "0", width: "100px", height: "101px" }}
+										src={landingBullets}
+										alt=""
+									/>
+									<img
+										className="whatWedoBoxBulletsWhite"
+										style={{ flexShrink: "0", width: "100px", height: "101px" }}
+										src={landingBulletsWhite}
+										alt=""
+									/>
+
+									<div style={{ paddingLeft: "13px" }} className="whatWedoBoxContent">
+										Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi aliquid sunt
+										maiores at nihil quo, dicta velit perferendis temporibus nemo?
+									</div>
+								</div>
 							</div>
 						</div>
+					</section>
+					<section
+						style={{
+							backgroundColor: "#0A65CC",
+							width: "100%",
+							display: "flex",
+							justifyContent: "center",
+							minHeight: "750px",
+						}}
+					>
+						<section
+							className="homeSectionWidth"
+							style={{ display: "flex", alignItems: "center", justifyContent: "space-between" }}
+						>
+							<div style={{ width: "45%" }}>
+								<div
+									className="headingTopography"
+									style={{
+										fontSize: "106px",
+										lineHeight: "113px",
+										textAlign: "left",
+										fontWeight: 800,
+										color: "#FEFEFE",
+									}}
+								>
+									Why us?{" "}
+								</div>
+								<div
+									className="headingTopography2"
+									style={{
+										color: "#FEFEFE",
+										fontSize: "36px",
+										lineHeight: "64px",
+									}}
+								>
+									{" "}
+									Find the Perfect Job that Matches Your Interests & Skills.
+								</div>
+								<div
+									className="headingTopography3"
+									style={{ color: "#FEFEFE", fontSize: "18px", lineHeight: "28px" }}
+								>
+									{" "}
+									Aliquam vitae turpis in diam convallis finibus in at risus. Nullam in scelerisque
+									leo, eget sollicitudin velit bestibulum. Aliquam vitae turpis in diam convallis
+									finibus in at risus. Nullam in scelerisque leo, eget sollicitudin velit
+									bestibulum.{" "}
+								</div>
+							</div>
+							<div style={{ width: "50%" }}>
+								<div
+									style={{
+										height: "400px",
+										borderRadius: "32px",
+										maxWidth: "793px",
+										border: "8px solid #292D32",
+										padding: "6px",
+										backgroundColor: "black",
+									}}
+								>
+									<ReactPlayer
+										url="https://www.youtube.com/shorts/QkIJfqQWWCk"
+										playing={true} // Autoplay video
+										loop={true} // Loop video
+										muted={true} // Mute video
+										controls={false} // Hide controls
+										width="100%"
+										height="100%"
+									/>
+								</div>
+							</div>
+						</section>
 					</section>
 					<div
 						style={{

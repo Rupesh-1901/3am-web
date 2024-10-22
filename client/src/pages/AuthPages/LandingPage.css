@@ -302,9 +302,29 @@
 .search-bar-container2 {
 	display: flex;
 	align-items: center;
-	border: 1px solid #e0e0e0; /* Light gray border */
-	border-radius: 8px; /* Rounded corners */
-	padding: 10px 10px; /* Padding inside the input container */
+	border: 1px solid #e0e0e0;
+	border-radius: 8px;
+	padding: 10px 10px;
 	width: 100%;
-	background-color: #fff; /* White background */
+	background-color: #fff;
+}
+.whatWedoBoxBulletsWhite {
+	display: none;
+}
+.whatWedoBox {
+	transition: transform 0.3s ease;
+	transform-origin: left;
+}
+.whatWedoBox:hover {
+	transform: scale(1.04);
+	background-color: #0a65cc !important;
+}
+.whatWedoBox:hover > .whatWedoBoxBullets {
+	display: none;
+}
+.whatWedoBox:hover > .whatWedoBoxBulletsWhite {
+	display: block;
+}
+.whatWedoBox:hover > .whatWedoBoxContent {
+	color: white;
 }

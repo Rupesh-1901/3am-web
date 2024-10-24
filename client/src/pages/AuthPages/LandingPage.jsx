@@ -1,17 +1,12 @@
 import { useEffect, useState } from "react";
 import "./LandingPage.css";
-import heroSectionImg from "../../assets/heroSectionImg.svg";
 import announcementLanding from "../../assets/announcementLanding.png";
 import liveJob from "../../assets/liveJob.svg";
 import landingBullets from "../../assets/landingBullets.svg";
 import companiesIcon from "../../assets/companiesIcon.svg";
 import candidatesIcon from "../../assets/candidatesIcon.svg";
 import landingBulletsWhite from "../../assets/landingBulletsWhite.svg";
-import viewAllArrow from "../../assets/viewAllArrow.svg";
 import companyLogo from "../../assets/companyLogo.svg";
-import GoogleLogo from "../../assets/GoogleLogo.svg";
-import PopularVacancies from "../Home/PopularVacancies";
-import FeaturedJobs from "../Home/FeaturedJobs";
 import SimpleSlider from "../../components/ui/SimpleSlider";
 import Navbar from "../../components/ui/Navbar";
 import NavigationFooter from "../../components/ui/NavigationFooter";
@@ -26,8 +21,6 @@ const LandingPage = () => {
 		};
 	}, []);
 	const navigate = useNavigate();
-	const [arrVacancies, setArrVacancies] = useState([]);
-	const [arrFeaturedJob, setArrFeaturedJob] = useState([]);
 	const [countrySelected, setcountrySelected] = useState("India");
 	const [openSearchDropdown, setopenSearchDropdown] = useState(false);
 
@@ -148,7 +141,7 @@ const LandingPage = () => {
 											fontSize: "16px",
 										}}
 										onClick={() => {
-											navigate("/auth/login");
+											navigate("/auth/login", { state: { logInUser: "employee" } });
 										}}
 									>
 										Find A Job
@@ -165,7 +158,7 @@ const LandingPage = () => {
 											fontSize: "16px",
 										}}
 										onClick={() => {
-											navigate("/auth/login");
+											navigate("/auth/login", { state: { logInUser: "candidate" } });
 										}}
 									>
 										Post A Job

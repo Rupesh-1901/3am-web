@@ -457,3 +457,44 @@ button:hover {
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
 }
+
+
+
+.provider-container {
+	display: flex;
+	flex-direction: column;
+	height: 100vh;
+}
+
+.provider-tabs {
+	display: flex;
+	background-color: var(--bg-light);
+	padding: 10px 20px;
+	border-bottom: 1px solid var(--light-grey);
+}
+
+.tab {
+	margin-right: 20px;
+	padding: 10px 15px;
+	border-radius: 8px;
+	color: var(--primary-text);
+	font-weight: 500;
+	transition: background-color 0.3s, color 0.3s;
+}
+
+.tab:hover {
+	background-color: var(--global-hover);
+}
+
+.active {
+	background-color: var(--primary);
+	color: var(--white);
+}
+
+.provider-content {
+	flex: 1;
+	padding: 20px;
+	overflow-y: auto;
+	background-color: var(--bg-dark);
+	color: var(--white);
+}

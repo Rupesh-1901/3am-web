@@ -1,130 +1,130 @@
 /* src/layouts/provider.css */
 
 .provider-container {
-    display: flex;
-    flex-direction: column;
-    height: 100vh;
+	display: flex;
+	flex-direction: column;
+	height: 100vh;
 }
 
 .provider-tabs {
-    display: flex;
-    background-color: var(--bg-light);
-    padding: 10px 20px;
-    border-bottom: 1px solid var(--light-grey);
+	display: flex;
+	background-color: var(--bg-light);
+	padding: 10px 20px;
+	border-bottom: 1px solid var(--light-grey);
 }
 
 .tab {
-    margin-right: 20px;
-    padding: 10px 15px;
-    border-radius: 8px;
-    color: var(--primary-text);
-    font-weight: 500;
-    transition: background-color 0.3s, color 0.3s;
+	margin-right: 20px;
+	padding: 10px 15px;
+	border-radius: 8px;
+	color: var(--primary-text);
+	font-weight: 500;
+	transition: background-color 0.3s, color 0.3s;
 }
 
 .tab:hover {
-    background-color: var(--global-hover);
+	background-color: var(--global-hover);
 }
 
 .active {
-    background-color: var(--primary);
-    color: var(--white);
+	background-color: var(--primary);
+	color: var(--white);
 }
 
 .provider-content {
-    flex: 1;
-    padding: 20px;
-    overflow-y: auto;
-    background-color: var(--bg-dark);
-    color: var(--white);
+	flex: 1;
+	padding: 20px;
+	overflow-y: auto;
+	background-color: var(--bg-dark);
+	color: var(--white);
 }
 
 /* CreateJobPost.css styles */
 
 .create-job-post-container {
-    max-width: 800px;
-    margin: 0 auto;
-    padding: 20px;
-    background-color: var(--bg-light);
-    border-radius: 12px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+	max-width: 800px;
+	margin: 0 auto;
+	padding: 20px;
+	background-color: var(--bg-light);
+	border-radius: 12px;
+	box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 
 .create-job-post-form {
-    display: flex;
-    flex-direction: column;
+	display: flex;
+	flex-direction: column;
 }
 
 .form-group {
-    color: black;
-    margin-bottom: 20px;
-    display: flex;
-    flex-direction: column;
-    /* align-items: center; */
+	color: black;
+	margin-bottom: 20px;
+	display: flex;
+	flex-direction: column;
+	/* align-items: center; */
 }
 
 .form-group label {
-    margin-bottom: 8px;
-    font-weight: 500;
+	margin-bottom: 8px;
+	font-weight: 500;
 }
 
 .input-shorttext {
-    padding: 10px 15px;
-    border: 1px solid var(--light-grey);
-    border-radius: 8px;
-    font-size: 16px;
-    background-color: var(--white);
-    color: var(--black);
+	padding: 10px 15px;
+	border: 1px solid var(--light-grey);
+	border-radius: 8px;
+	font-size: 16px;
+	background-color: var(--white);
+	color: var(--black);
 }
 
 .input-shorttext:focus {
-    border-color: var(--primary);
-    outline: none;
-    box-shadow: 0 0 5px rgba(18, 150, 176, 0.5);
+	border-color: var(--primary);
+	outline: none;
+	box-shadow: 0 0 5px rgba(18, 150, 176, 0.5);
 }
 
 .input-shorttext.small-input {
-    width: calc(50% - 10px);
-    margin-right: 10px;
+	width: calc(50% - 10px);
+	margin-right: 10px;
 }
 
 .other-requirement {
-    display: flex;
-    align-items: center;
-    margin-bottom: 10px;
+	display: flex;
+	align-items: center;
+	margin-bottom: 10px;
 }
 
 .remove-button {
-    background-color: transparent;
-    border: none;
-    color: #ff4d4f;
-    font-size: 24px;
-    cursor: pointer;
-    margin-left: 10px;
+	background-color: transparent;
+	border: none;
+	color: #ff4d4f;
+	font-size: 24px;
+	cursor: pointer;
+	margin-left: 10px;
 }
 
 .add-button {
-    background-color: var(--primary);
-    color: var(--white);
-    border: none;
-    padding: 10px 15px;
-    border-radius: 8px;
-    cursor: pointer;
-    font-size: 16px;
-    width: fit-content;
+	background-color: var(--primary);
+	color: var(--white);
+	border: none;
+	padding: 10px 15px;
+	border-radius: 8px;
+	cursor: pointer;
+	font-size: 16px;
+	width: fit-content;
 }
 
 .add-button:hover {
-    background-color: var(--primary-hover);
+	background-color: var(--primary-hover);
 }
 
 .form-hint {
-    font-size: 12px;
-    color: var(--secondary-text);
-    margin-top: 5px;
+	font-size: 12px;
+	color: var(--secondary-text);
+	margin-top: 5px;
 }
 
-.loginSubmitButton {
+/* .loginSubmitButton {
     background-color: var(--primary);
     color: var(--white);
     width: 700px;
@@ -136,68 +136,68 @@
     font-size: 16px;
     align-items: center;
     align-self: flex-start;
-}
+} */
 
-.loginSubmitButton:hover {
-    background-color: var(--primary-hover);
-}
+/* .loginSubmitButton:hover {
+	background-color: var(--primary-hover);
+} */
 
 .skills-input-container {
-    display: flex;
-    align-items: center;
-    gap: 10px;
+	display: flex;
+	align-items: center;
+	gap: 10px;
 }
 
 .select-skill {
-    flex: 1;
+	flex: 1;
 }
 
 .add-skill-button {
-    background-color: var(--primary);
-    color: var(--white);
-    border: none;
-    padding: 10px 15px;
-    border-radius: 8px;
-    cursor: pointer;
-    font-size: 14px;
-    height: 42px;
+	background-color: var(--primary);
+	color: var(--white);
+	border: none;
+	padding: 10px 15px;
+	border-radius: 8px;
+	cursor: pointer;
+	font-size: 14px;
+	height: 42px;
 }
 
 .add-skill-button:disabled {
-    background-color: var(--light-grey);
-    cursor: not-allowed;
+	background-color: var(--light-grey);
+	cursor: not-allowed;
 }
 
 .add-skill-button:hover:not(:disabled) {
-    background-color: var(--primary-hover);
+	background-color: var(--primary-hover);
 }
 
 .skills-list {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 10px;
-    margin-top: 10px;
+	display: flex;
+	flex-wrap: wrap;
+	gap: 10px;
+	margin-top: 10px;
 }
 
 .skill-item {
-    background-color: var(--table-back);
-    color: var(--primary-text);
-    padding: 5px 10px;
-    border-radius: 20px;
-    display: flex;
-    align-items: center;
-    font-size: 14px;
+	background-color: var(--table-back);
+	color: var(--primary-text);
+	padding: 5px 10px;
+	border-radius: 20px;
+	display: flex;
+	align-items: center;
+	font-size: 14px;
 }
 
 .remove-skill-button {
-    background: transparent;
-    border: none;
-    color: #ff4d4f;
-    margin-left: 5px;
-    cursor: pointer;
-    font-size: 16px;
+	background: transparent;
+	border: none;
+	color: #ff4d4f;
+	margin-left: 5px;
+	cursor: pointer;
+	font-size: 16px;
 }
 
 .remove-skill-button:hover {
-    color: #ff7875;
+	color: #ff7875;
 }

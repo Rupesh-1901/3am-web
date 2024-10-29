@@ -8,76 +8,75 @@ import ForgotPassword from "./pages/AuthPages/ForgotPassword";
 import ResetPassword from "./pages/AuthPages/ResetPassword";
 import HomePage from "./pages/Home/HomePage";
 import LandingPage from "./pages/AuthPages/LandingPage";
-import ProviderLayout from "./layouts/ProviderLayout"
-import CreateJobPost from "./pages/Provider/CreateJobPost"
+import ProviderLayout from "./layouts/ProviderLayout";
+import CreateJobPost from "./pages/Provider/CreateJobPost";
 import ViewApplicants from "./pages/Provider/ViewApplicant";
 import ProfilePage from "./pages/Provider/ProfilePage";
 
-
 const router = new createBrowserRouter([
-  {
-    element: <NoAuth />,
-    children: [
-      {
-        path: "/auth",
-        element: <AuthPage />,
-        children: [
-          {
-            path: "login",
-            element: <LoginPage />,
-          },
-          {
-            path: "register",
-            element: <RegisterPage />,
-          },
-          {
-            path: "forgot-password",
-            element: <ForgotPassword />,
-          },
-        ],
-      },
-      {
-        path: "/reset-password",
-        element: <ResetPassword />,
-      },
-      {
-        path: "/landing",
-        element: <LandingPage />,
-      },
-      {
-        path: "/provider",
-        element: <ProviderLayout />,
-        children: [
-          {
-            path: "create-job-post",
-            element: <CreateJobPost />,
-          },
-          {
-            path: "view-applicants",
-            element: <ViewApplicants />,
-          },
-          {
-            path: "profile",
-            element: <ProfilePage />,
-          },
-          {
-            index: true,
-            element: <CreateJobPost />,
-          },
-        ],
-      },
-    ],
-  },
+	{
+		element: <NoAuth />,
+		children: [
+			{
+				path: "/auth",
+				element: <AuthPage />,
+				children: [
+					{
+						path: "login",
+						element: <LoginPage />,
+					},
+					{
+						path: "register",
+						element: <RegisterPage />,
+					},
+					{
+						path: "forgot-password",
+						element: <ForgotPassword />,
+					},
+				],
+			},
+			{
+				path: "/reset-password",
+				element: <ResetPassword />,
+			},
+			{
+				path: "/landing",
+				element: <LandingPage />,
+			},
+		],
+	},
 
-  {
-    element: <AuthRequired />,
-    path: "/",
-    children: [
-      {
-        path: "home",
-        element: <HomePage />,
-      },
-    ],
-  },
+	{
+		element: <AuthRequired />,
+		path: "/",
+		children: [
+			{
+				path: "home",
+				element: <HomePage />,
+			},
+			{
+				path: "provider",
+				element: <ProviderLayout />,
+				children: [
+					{
+						path: "create-job-post",
+						element: <CreateJobPost />,
+					},
+					{
+						path: "view-applicants",
+						element: <ViewApplicants />,
+					},
+					{
+						path: "profile",
+						element: <ProfilePage />,
+					},
+					{
+						index: true,
+						element: <CreateJobPost />,
+					},
+				],
+			},
+		],
+	},
 ]);
 export default router;

@@ -50,7 +50,7 @@ const Navbar = () => {
 					clickAction: () => navigate("/provider/profile"),
 				},
 			],
-			clickAction: () => navigate("/provider/create-job-post"),
+			clickAction: () => {},
 		},
 		{
 			id: 3,
@@ -93,8 +93,9 @@ const Navbar = () => {
 		}
 	}, [location?.pathname]);
 
-	const handleTabChange = (newTabIndex) => {
+	const handleTabChange = (newTabIndex, click) => {
 		setTabIndex(newTabIndex);
+		click();
 	};
 	return (
 		<div className="navbar">
@@ -111,7 +112,7 @@ const Navbar = () => {
 										: `tabHeading ${tabIndex === index ? "tabActive" : ""}`
 								}
 								onClick={() => {
-									handleTabChange(index);
+									handleTabChange(index, item?.clickAction);
 									console.log("object 111111");
 								}}
 								style={{

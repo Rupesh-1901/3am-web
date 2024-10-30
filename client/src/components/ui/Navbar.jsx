@@ -127,7 +127,7 @@ const Navbar = () => {
 								<div
 									className="country-dropdown dropdownHoverDiv"
 									style={{
-										top: "45px",
+										top: "40px",
 										left: " 6px",
 										position: "absolute",
 										width: "fit-content",

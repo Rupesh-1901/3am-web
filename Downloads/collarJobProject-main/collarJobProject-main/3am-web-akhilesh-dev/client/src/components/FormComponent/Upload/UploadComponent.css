@@ -1,0 +1,14 @@
+.uploadContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 12px;
+  border: 1px dotted var(--primary);
+  padding: 12px;
+  text-align: center;
+  gap: 6px;
+  border-radius: 6px;
+}
+.uploaded {
+  background-color: var(--primary-hover);
+}

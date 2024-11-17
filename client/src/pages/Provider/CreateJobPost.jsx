@@ -104,7 +104,7 @@ const CreateJobPost = () => {
                 required
               >
                 <option value="" disabled>
-                  Job Locations
+                  Job Location
                 </option>
                 {jobLocations.map((location, index) => (
                   <option key={index} value={location}>

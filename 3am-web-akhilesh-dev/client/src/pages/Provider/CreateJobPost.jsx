@@ -246,6 +246,7 @@
 import React, { useState } from "react";
 import createJobPostSvg from "../../assets/create_job_post_logo.svg"; // Importing the SVG
 import "./provider.css";
+// import Assistant from "../../components/assistant/chatbot.jsx";
 
 const CreateJobPost = () => {
   const [jobTitle, setJobTitle] = useState("");
@@ -716,6 +717,9 @@ const CreateJobPost = () => {
           className="job-post-svg"
         />
       </div>
+      {/* <div className="assistant-container">
+        <Assistant />
+      </div> */}
     </div>
   );
 };

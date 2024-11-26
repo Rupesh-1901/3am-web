@@ -234,10 +234,10 @@
   width: 90%; /* Container width */
   max-width: 600px; /* Limit the maximum width */
   padding: 20px;
-  border: 1px solid #ccc;
+  border: 1px solid white;
   border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Box shadow */
-  background-color: #f9f9f9; /* Light background for form */
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1); /* Box shadow */
+  background-color: white; /* Light background for form */
   max-height: 600px; /* Adjust this value based on your design */
   overflow-y: auto; /* Enable vertical scrolling */
   padding-right: 10px;
@@ -362,22 +362,22 @@ select option:hover {
   gap: 10px; /* Adds space between the buttons */
 }
 
-/* Button style */
+/* Button style
 .contact-option-btn {
   padding: 10px 20px;
-  background-color: #f0f0f0;
+  background-color: #fffefe;
   border: none;
   border-radius: 30px;
   cursor: pointer;
   font-size: 16px;
   transition: background-color 0.3s ease, color 0.3s ease;
-}
+} */
 
 /* Active state for selected button */
 /* Button style */
 .contact-option-btn {
   padding: 10px 20px;
-  background-color: #f0f0f0;
+  background-color: #f6f5f5;
   border: none;
   border-radius: 30px;
   cursor: pointer;
@@ -482,7 +482,8 @@ select option:hover {
   border: 1px solid #ccc; /* Light border for the textarea */
   font-size: 14px; /* Adjust font size if needed */
   width: 100%; /* Ensure it spans across the container */
-  resize: vertical; /* Allow vertical resizing of the textarea */
+  height: 150px;
+  resize: none; /* Allow vertical resizing of the textarea */
 }
 /* Style for rounded corners on input fields */
 .input-field.rounded-corners {
@@ -562,11 +563,26 @@ select option:hover {
   padding: 10px; /* Padding for better spacing */
   font-size: 16px; /* Text size */
   width: 100%; /* Make the textarea fill the width of its container */
-  resize: vertical; /* Allow vertical resizing */
+  resize: none; /* Allow vertical resizing */
   box-sizing: border-box; /* Include padding in the total width/height */
+  height: 160px;
 }
 
 .input-textarea:focus {
   border-color: #1269b0; /* Highlight border color when focused */
   outline: none; /* Remove the default outline */
+}
+.assistant-container {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 1000; /* Ensures it stays above other elements */
+  width: 300px; /* Adjust based on the size of your chatbot */
+  height: auto;
+}
+
+.assistant-container > * {
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Adds a subtle shadow */
+  border-radius: 8px; /* Rounded corners */
+  overflow: hidden; /* Prevent content overflow */
 }

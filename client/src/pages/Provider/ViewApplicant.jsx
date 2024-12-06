@@ -1,8 +1,8 @@
-// eslint-disable-next-line no-unused-vars
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
+import Premium from "./PremiumModal";
 import "./ViewApplicant.css";
-import framecard from "../../assets/images/applicantscard.png"
+import framecard from "../../assets/applicantscard.svg";
 
 const jobCards = Array.from({ length: 7 }, (_, i) => ({
   id: i + 1,
@@ -14,9 +14,16 @@ const jobCards = Array.from({ length: 7 }, (_, i) => ({
 }));
 
 const ViewApplicants = () => {
+  const [isPremiumOpen, setPremiumOpen] = useState(false);
+
   return (
     <div className="viewapplicants-container">
-      <h1 className="viewapplicants-title">Job Applications</h1>
+      <div className="viewapplicants-header">
+        <h1 className="viewapplicants-title">Job Applications</h1>
+        <button className="upgrade-button" onClick={() => setPremiumOpen(true)}>
+          Upgrade to Premium
+        </button>
+      </div>
       <div className="viewapplicants-grid">
         {jobCards.map((card) => (
           <Link
@@ -26,7 +33,7 @@ const ViewApplicants = () => {
           >
             <div className="viewapplicants-card">
               <div className="card-image">
-                <img src={framecard} alt="Job Icon" className="icon"/>
+                <img src={framecard} alt="Job Icon" className="icon" />
               </div>
               <div className="card-content">
                 <h2 className="card-title">{card.title}</h2>
@@ -44,6 +51,7 @@ const ViewApplicants = () => {
           </Link>
         ))}
       </div>
+      <Premium isOpen={isPremiumOpen} onClose={() => setPremiumOpen(false)} />
     </div>
   );
 };

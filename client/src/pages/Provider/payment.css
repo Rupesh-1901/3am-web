@@ -1,0 +1,262 @@
+/* Payment Modal */
+.payment-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.payment-modal {
+  background: white;
+  padding: 20px 30px;
+  border-radius: 10px;
+  width: 90%;
+  max-width: 600px;
+  position: relative;
+  text-align: left;
+}
+
+.payment-heading {
+  font-size: 24px;
+  color: black;
+  margin-bottom: 10px;
+}
+
+.payment-description {
+  font-size: 14px;
+  color: rgb(144, 140, 140);
+  margin-bottom: 20px;
+}
+
+/* Payment Method */
+.payment-method {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.radio-container {
+  display: flex;
+  align-items: center;
+  margin-right: 10px;
+}
+
+.radio-container input {
+  display: none;
+}
+
+.radio-checkmark {
+  width: 16px;
+  height: 16px;
+  border: 2px solid goldenrod;
+  border-radius: 50%;
+  display: inline-block;
+  position: relative;
+  margin-right: 8px;
+}
+
+.radio-checkmark::after {
+  content: "";
+  width: 10px;
+  height: 10px;
+  background: goldenrod;
+  border-radius: 50%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: block;
+}
+
+.payment-symbols {
+  display: flex;
+  gap: 10px;
+}
+
+.payment-icon {
+  width: 55px;
+  height: auto;
+}
+.payment-icon1 {
+  width: 95px;
+  height: auto;
+}
+
+/* Card Details */
+.input-group {
+  margin-bottom: 15px;
+  position: relative;
+}
+
+.input-field {
+  width: 75.2%;
+  padding: 10px;
+  border: 1px solid lightgray;
+  border-radius: 5px;
+  font-size: 14px;
+}
+
+.short-field {
+  width: 35%; /* Ensures that MM/YY and CVV are side by side */
+  margin-right: 4%; /* Adds some space between them */
+}
+
+.input-icon {
+  position: absolute;
+  right: 10px;
+  width: 20px;
+  height: 20px;
+  background: lightgray;
+  border-radius: 50%;
+}
+
+.card-icon {
+  background: url("card-icon.png") no-repeat center;
+  background-size: contain;
+}
+
+.lock-icon {
+  background: url("lock-icon.png") no-repeat center;
+  background-size: contain;
+}
+
+/* Security Note */
+.security-note {
+  font-size: 12px;
+  color: rgb(168, 162, 162);
+
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+/* Order Details */
+.order-details {
+  margin-top: 30px;
+}
+
+.order-heading {
+  font-size: 18px;
+  margin-bottom: 10px;
+  color: rgb(35, 34, 34);
+}
+
+.order-box {
+  background: white;
+  border: 1px solid lightgray;
+  border-radius: 10px;
+  padding: 10px;
+  margin-bottom: 20px;
+}
+
+.order-number {
+  margin-bottom: 10px;
+  color: rgb(35, 34, 34);
+  font-weight: 500;
+  margin-bottom: 10px;
+}
+
+.order-summary {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.order-price {
+  font-size: 18px;
+  font-weight: bold;
+  color: rgb(75, 74, 74);
+}
+
+.order-description {
+  font-size: 15px;
+  font-weight: 500;
+  color: rgb(48, 47, 47);
+}
+
+.order-info {
+  font-size: 12px;
+  color: rgb(168, 162, 162);
+}
+
+/* Pay Button (Square with rounded corners, positioned below security note) */
+.pay-button {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 12px; /* Rounded corners */
+  padding: 12px 24px;
+  font-size: 16px;
+  cursor: pointer;
+  margin-top: 5px;
+  margin-bottom: 15px;
+  width: 15%; /* Reduced width (adjust percentage as needed) */
+  text-align: center;
+  transition: background-color 0.3s;
+  margin-left: auto; /* Center the button horizontally */
+  margin-right: auto;
+}
+
+.pay-button:hover {
+  background-color: #0056b3;
+}
+
+/* Close Button */
+.modal-close-button {
+  background-color: #f5f5f5;
+  color: black;
+  border: none;
+  border-radius: 5px;
+  padding: 8px 16px;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.modal-close-button:hover {
+  background-color: lightgray;
+}
+
+/* Align MM/YY and CVV inputs side by side */
+.input-container {
+  display: flex;
+  flex-direction: column;
+}
+.Bank {
+  color: black;
+  font-size: 15px;
+  font-weight: 500;
+  margin-right: 250px;
+}
+.row {
+  display: flex;
+  gap: 10px; /* Add space between the inputs */
+}
+/* MM/YY Field with Date Icon */
+.input-field[placeholder="MM/YY"] {
+  background-image: url("../../assets/date-icon.svg");
+  background-repeat: no-repeat;
+  background-position: right 10px center;
+  background-size: 20px 20px; /* Adjust icon size */
+  padding-right: 35px; /* Space for the icon */
+}
+
+/* CVV Field with Lock Icon */
+.input-field[placeholder="CVV"] {
+  background-image: url("../../assets/lock-icon.svg");
+  background-repeat: no-repeat;
+  background-position: right 10px center;
+  background-size: 20px 20px; /* Adjust icon size */
+  padding-right: 35px; /* Space for the icon */
+}
+.input-field[placeholder="Card Number"] {
+  background-image: url("../../assets/card.svg");
+  background-repeat: no-repeat;
+  background-position: right 10px center;
+  background-size: 20px 20px; /* Adjust icon size */
+  padding-right: 35px; /* Space for the icon */
+}

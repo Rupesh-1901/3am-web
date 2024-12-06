@@ -1,0 +1,155 @@
+/* Container styles */
+.viewapplicants-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+  background-color: #ffffff;
+}
+
+.viewapplicants-title {
+  font-family: "Inter", sans-serif;
+  font-size: 1.75rem;
+  font-weight: 700;
+  text-align: left;
+  margin-bottom: 2rem;
+  color: #000300;
+}
+
+.viewapplicants-grid {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  gap: 1.5rem;
+}
+
+@media (min-width: 768px) {
+  .viewapplicants-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  .viewapplicants-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.viewapplicants-card-link {
+  text-decoration: none;
+}
+
+.viewapplicants-card {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  background-color: #f3f4f6;
+  border-radius: 12px;
+  padding: 1.5rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+  text-align: center;
+  cursor: pointer;
+  gap: 20px;
+}
+
+.card-image {
+  flex-shrink: 0;
+  width: 80px;
+  height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.viewapplicants-card:hover {
+  transform: scale(1.05);
+}
+
+.icon {
+  width: 100%;
+  height: auto;
+  border-radius: 50%;
+  background-color: #e5e7eb;
+}
+
+.card-content {
+  flex: 1;
+}
+
+.card-title {
+  font-size: 1rem;
+  font-family: "Inter", sans-serif;
+  font-weight: 800;
+  color: #000;
+  margin-bottom: 0.25rem;
+}
+
+.card-location {
+  color: #0a65cc;
+  font-family: "Inter", sans-serif;
+  font-weight: 800;
+  font-size: 0.875rem;
+  margin-bottom: 1rem;
+}
+
+.card-status {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.status-dot {
+  width: 8px;
+  height: 8px;
+  background-color: #08c356;
+  border-radius: 50%;
+}
+
+.status-text {
+  font-size: 0.875rem;
+  font-weight: 400;
+  color: #000000;
+}
+
+.card-date {
+  color: #656565;
+  font-weight: 300;
+  font-size: 0.75rem;
+  margin-bottom: 1rem;
+}
+
+.applications-box {
+  background-color: #ffffff;
+  color: #111827;
+  font-weight: bold;
+  padding: 0.5rem;
+  border-radius: 9999px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+.viewapplicants-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.viewapplicants-title {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.upgrade-button {
+  background-color: #007bff;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s ease;
+}
+
+.upgrade-button:hover {
+  background-color: #0056b3;
+}

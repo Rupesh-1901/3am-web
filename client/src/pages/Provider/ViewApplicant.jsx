@@ -1,11 +1,10 @@
-// eslint-disable-next-line no-unused-vars
+/* eslint-disable no-unused-vars */
+// src/pages/Provider/ViewApplicants.jsx
+
 import React from "react";
 import { Link } from "react-router-dom";
-import "./ViewApplicant.css";
-import "../Home/HomePage.css";
-import framecard from "../../assets/images/applicantscard.png"
+import framecard from "../../assets/images/applicantscard.png";
 import companyLogo from "../../assets/companyLogo.svg";
-
 
 const jobCards = [
   {
@@ -63,7 +62,7 @@ const jobCards = [
     status: "Active",
     postedDate: "2024-03-15",
     applications: 134,
-  }
+  },
 ];
 
 const ViewApplicants = () => {
@@ -71,8 +70,8 @@ const ViewApplicants = () => {
     <>
       {/* Header Section */}
       <div
-        className="header-container"
         style={{
+          backgroundColor: "white",
           width: "100%",
           boxShadow: "0px -1.08px 0px 0px #E4E5E8 inset",
           padding: "10px 0px",
@@ -80,17 +79,44 @@ const ViewApplicants = () => {
           justifyContent: "center",
         }}
       >
-        <section className="homeSectionWidth searchSection" style={{ padding: "0px" }}>
+        <section
+          style={{
+            width: "100%",
+            maxWidth: "1200px", // Adjust based on your design
+            padding: "0px 20px",
+            display: "flex",
+            justifyContent: "space-between",
+            alignItems: "center",
+          }}
+        >
           <div style={{ display: "flex", gap: "50px", alignItems: "center" }}>
             {/* Company Logo */}
             <div>
-              <img src={companyLogo} alt="Company Logo" />
+              <img
+                src={companyLogo}
+                alt="Company Logo"
+                style={{ height: "40px" }}
+              />
             </div>
 
             {/* Search Bar */}
-            <div className="searchInput">
-              <div className="search-bar-container">
-                <span className="search-icon">
+            <div style={{ flex: 1 }}>
+              <div
+                style={{
+                  position: "relative",
+                  display: "flex",
+                  alignItems: "center",
+                  width: "100%",
+                }}
+              >
+                {/* Search Icon */}
+                <span
+                  style={{
+                    position: "absolute",
+                    left: "10px",
+                    pointerEvents: "none",
+                  }}
+                >
                   <svg
                     width="27"
                     height="27"
@@ -114,55 +140,191 @@ const ViewApplicants = () => {
                     />
                   </svg>
                 </span>
+                {/* Search Input */}
                 <input
                   type="text"
-                  className="search-input"
                   placeholder="Job title, keyword, company"
+                  style={{
+                    width: "100%",
+                    padding: "10px 10px 10px 40px", // Padding-left to accommodate the icon
+                    border: "1px solid #ccc",
+                    borderRadius: "8px",
+                    fontSize: "16px",
+                    backgroundColor: "#fff",
+                  }}
                 />
               </div>
             </div>
           </div>
           <div style={{ display: "flex", gap: "20px", alignItems: "center" }}>
-            <button className="featuredJobButton view-all">View All</button>
-            <button className="featuredJobButton post-job">Post A Job</button>
+            <button
+              style={{
+                padding: "10px 20px",
+                backgroundColor: "#1890ff",
+                color: "white",
+                border: "none",
+                borderRadius: "8px",
+                cursor: "pointer",
+                fontSize: "16px",
+              }}
+            >
+              View All
+            </button>
+            <button
+              style={{
+                padding: "10px 20px",
+                backgroundColor: "#52c41a",
+                color: "white",
+                border: "none",
+                borderRadius: "8px",
+                cursor: "pointer",
+                fontSize: "16px",
+              }}
+            >
+              Post A Job
+            </button>
           </div>
         </section>
       </div>
 
       {/* Job Applications Section */}
-      <div className="viewapplicants-container">
-        <div className="viewapplicants-header">
-          <h1 className="viewapplicants-title">Job Applications</h1>
-          <button className="update-btn">Update Changes</button>
+      <div
+        style={{
+          width: "100%",
+          backgroundColor: "white",
+          padding: "20px",
+          boxSizing: "border-box",
+        }}
+      >
+        {/* Header */}
+        <div
+          style={{
+            width: "100%",
+            backgroundColor: "white",
+            display: "flex",
+            justifyContent: "space-between",
+            alignItems: "center",
+            marginBottom: "20px",
+          }}
+        >
+          <h1 style={{ fontSize: "24px", margin: "0" }}>Job Applications</h1>
+          <button
+            style={{
+              padding: "10px 20px",
+              backgroundColor: "#1890ff",
+              color: "white",
+              border: "none",
+              borderRadius: "8px",
+              cursor: "pointer",
+              fontSize: "16px",
+            }}
+          >
+            Update Changes
+          </button>
         </div>
 
         {/* Job Cards Grid */}
-        <div className="viewapplicants-grid">
+        <div
+          style={{
+            display: "grid",
+            gridTemplateColumns: "repeat(auto-fill, minmax(250px, 1fr))",
+            gap: "20px",
+          }}
+        >
           {jobCards.map((card) => (
             <Link
               to={`/provider/view-applicants/description/${card.id}`}
               key={card.id}
-              className="viewapplicants-card-link"
+              style={{ textDecoration: "none" }}
             >
-              <div className="viewapplicants-card">
-                <div className="card-image">
-                  <img src={framecard} alt="Job Icon" className="icon" />
+              <div
+                style={{
+                  display: "flex",
+                  flexDirection: "column",
+                  border: "1px solid #e8e8e8",
+                  borderRadius: "8px",
+                  padding: "20px",
+                  transition: "box-shadow 0.3s",
+                  backgroundColor: "#fafafa",
+                }}
+                onMouseEnter={(e) => {
+                  e.currentTarget.style.boxShadow =
+                    "0 4px 12px rgba(0, 0, 0, 0.1)";
+                }}
+                onMouseLeave={(e) => {
+                  e.currentTarget.style.boxShadow = "none";
+                }}
+              >
+                {/* Card Image */}
+                <div
+                  style={{
+                    display: "flex",
+                    justifyContent: "center",
+                    marginBottom: "15px",
+                  }}
+                >
+                  <img
+                    src={framecard}
+                    alt="Job Icon"
+                    style={{ width: "50px", height: "50px" }}
+                  />
                 </div>
-                <div className="card-content">
-                  <h2 className="card-title">{card.title}</h2>
-                  <p className="card-location">{card.location}</p>
-                  <div className="card-status">
+                {/* Card Content */}
+                <div style={{ flex: "1" }}>
+                  <h2
+                    style={{
+                      fontSize: "20px",
+                      margin: "0 0 10px 0",
+                      color: "#333",
+                    }}
+                  >
+                    {card.title}
+                  </h2>
+                  <p style={{ color: "#555", margin: "0 0 10px 0" }}>
+                    {card.location}
+                  </p>
+                  <div
+                    style={{
+                      display: "flex",
+                      alignItems: "center",
+                      marginBottom: "10px",
+                    }}
+                  >
                     <span
-                      className="status-dot"
                       style={{
-                        backgroundColor: card.status === "Active" ? "green" : "red",
+                        display: "inline-block",
+                        width: "10px",
+                        height: "10px",
+                        borderRadius: "50%",
+                        backgroundColor:
+                          card.status === "Active" ? "green" : "red",
+                        marginRight: "8px",
                       }}
                     ></span>
-                    <span className="status-text">{card.status}</span>
+                    <span style={{ color: "#555", fontSize: "14px" }}>
+                      {card.status}
+                    </span>
                   </div>
-                  <p className="card-date">Posted on {card.postedDate}</p>
-                  <div className="applications-box">
-                    <span>{card.applications} Applications</span>
+                  <p
+                    style={{
+                      color: "#777",
+                      fontSize: "14px",
+                      marginBottom: "10px",
+                    }}
+                  >
+                    Posted on {card.postedDate}
+                  </p>
+                  <div
+                    style={{
+                      backgroundColor: "#f0f0f0",
+                      padding: "8px 12px",
+                      borderRadius: "4px",
+                      display: "inline-block",
+                      fontSize: "14px",
+                      color: "#333",
+                    }}
+                  >
+                    {card.applications} Applications
                   </div>
                 </div>
               </div>

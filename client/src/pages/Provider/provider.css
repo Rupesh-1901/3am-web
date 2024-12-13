@@ -426,7 +426,7 @@ select option:hover {
 
 /* Hover effect for buttons */
 .contact-option-btn:hover {
-	background-color: #1296b0;
+	background-color: #d1dfe2;
 	color: white;
 }
 
@@ -462,7 +462,7 @@ select option:hover {
 }
 
 .option-btn.selected {
-	background-color: #0c7be3;
+	background-color: #e2ebf3;
 	color: white;
 }
 
@@ -500,13 +500,13 @@ select option:hover {
 
 /* When an option is selected in the 9th row */
 .form-row-9th .option-btn.selected {
-	background-color: #1269b0;
+	background-color: #dae2e9;
 	color: white;
 }
 
 /* Hover effect for buttons in 9th row */
 .form-row-9th .option-btn:hover {
-	background-color: #1269b0;
+	background-color: #e1ebf4;
 	color: white;
 }
 
@@ -600,7 +600,7 @@ select option:hover {
 
 /* Style for the Post a Job button */
 .post-job-btn {
-	background-color: #1269b0;
+	background-color: #dfe6ec;
 	/* Highlighted color */
 	color: white;
 	/* Text color */
@@ -625,7 +625,7 @@ select option:hover {
 }
 
 .post-job-btn:hover {
-	background-color: #0f548a;
+	background-color: #dce3e8;
 	/* Darker shade of blue on hover */
 }
 

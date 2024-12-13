@@ -1,19 +1,36 @@
-import React from "react";
+// eslint-disable-next-line no-unused-vars
+import React, { useState } from "react";
+// eslint-disable-next-line no-unused-vars
+import { Modal } from "antd"; // Importing Modal if needed, but we're using a separate component
+import "antd/dist/reset.css";
+// Import Ant Design styles
 import "./Description.css";
 import profileImage from "../../assets/images/profile-placeholder.png";
+import CandidateModal from "./CandidateModal"; // Ensure the path is correct
 
 const Description = () => {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [selectedApplicant, setSelectedApplicant] = useState(null);
+
   const jobDetails = {
     title: "Senior UI Designer needed",
-    description: "Our company Microsoft is looking for a senior UI and UX lead designer to take over March, 2020.",
+    description:
+      "Our company Microsoft is looking for a senior UI and UX lead designer to take over March, 2020.",
     requirements: [
       "5 years Experience",
       "Team Leader",
-      "Innovative and Creative eye"
+      "Innovative and Creative eye",
     ],
-    skills: ["Adobe XD", "Sketch Pro", "Adobe XD", "Sketch Pro", "Sketch Pro", "Sketch Pro"],
+    skills: [
+      "Adobe XD",
+      "Sketch Pro",
+      "Adobe XD",
+      "Sketch Pro",
+      "Sketch Pro",
+      "Sketch Pro",
+    ],
     location: "Muskat",
-    salary: "55k-70k + Incentives"
+    salary: "55k-70k + Incentives",
   };
 
   const applicants = [
@@ -24,9 +41,11 @@ const Description = () => {
       status: "high",
       location: "India",
       type: "Remote",
-      description: "Had 5 years of working experience as design lead. Working for a reputated com..",
-      skills: ["Sketch", "Indesign", "Adobe Suite"]
+      description:
+        "Had 5 years of working experience as design lead. Working for a reputated com..",
+      skills: ["Sketch", "Indesign", "Adobe Suite"],
     },
+
     {
       id: 2,
       name: "Rupesh Mishra",
@@ -34,8 +53,9 @@ const Description = () => {
       status: "medium",
       location: "India",
       type: "Remote",
-      description: "Had 5 years of working experience as design lead. Working for a reputated com..",
-      skills: ["Sketch", "Indesign", "Adobe Suite"]
+      description:
+        "Had 5 years of working experience as design lead. Working for a reputated com..",
+      skills: ["Sketch", "Indesign", "Adobe Suite"],
     },
     {
       id: 3,
@@ -44,8 +64,9 @@ const Description = () => {
       status: "medium",
       location: "India",
       type: "Remote",
-      description: "Had 5 years of working experience as design lead. Working for a reputated com..",
-      skills: ["Sketch", "Indesign", "Adobe Suite"]
+      description:
+        "Had 5 years of working experience as design lead. Working for a reputated com..",
+      skills: ["Sketch", "Indesign", "Adobe Suite"],
     },
     {
       id: 4,
@@ -54,8 +75,9 @@ const Description = () => {
       status: "high",
       location: "India",
       type: "Remote",
-      description: "Had 5 years of working experience as design lead. Working for a reputated com..",
-      skills: ["Sketch", "Indesign", "Adobe Suite"]
+      description:
+        "Had 5 years of working experience as design lead. Working for a reputated com..",
+      skills: ["Sketch", "Indesign", "Adobe Suite"],
     },
     {
       id: 5,
@@ -64,8 +86,9 @@ const Description = () => {
       status: "medium",
       location: "India",
       type: "Remote",
-      description: "Had 5 years of working experience as design lead. Working for a reputated com..",
-      skills: ["Sketch", "Indesign", "Adobe Suite"]
+      description:
+        "Had 5 years of working experience as design lead. Working for a reputated com..",
+      skills: ["Sketch", "Indesign", "Adobe Suite"],
     },
     {
       id: 6,
@@ -74,18 +97,31 @@ const Description = () => {
       status: "low",
       location: "India",
       type: "Remote",
-      description: "Had 5 years of working experience as design lead. Working for a reputated com..",
-      skills: ["Sketch", "Indesign", "Adobe Suite"]
-    }
+      description:
+        "Had 5 years of working experience as design lead. Working for a reputated com..",
+      skills: ["Sketch", "Indesign", "Adobe Suite"],
+    },
   ];
 
+  const openModal = (applicant) => {
+    setSelectedApplicant(applicant);
+    setIsModalOpen(true);
+  };
+
+  const closeModal = () => {
+    setSelectedApplicant(null);
+    setIsModalOpen(false);
+  };
+
   return (
-    <div className="description-container">
+    <div className="description-container" style={{ background: "white" }}>
       {/* Job Details Section */}
       <div className="job-details">
         <h1>{jobDetails.title}</h1>
-        <p className="job-description">{jobDetails.description}</p>
-        <div className="requirements">
+        <p className="job-description" style={{ color: "black" }}>
+          {jobDetails.description}
+        </p>
+        <div className="requirements" style={{ color: "black" }}>
           <strong>Requirements:</strong>
           <ul>
             {jobDetails.requirements.map((req, index) => (
@@ -93,24 +129,32 @@ const Description = () => {
             ))}
           </ul>
         </div>
-        
+
         <div className="skillset-section">
           <h2>Skillset Required</h2>
           <div className="skills-container">
             {jobDetails.skills.map((skill, index) => (
-              <span key={index} className="skill-tag">{skill}</span>
+              <span key={index} className="skill-tag">
+                {skill}
+              </span>
             ))}
           </div>
         </div>
 
         <div className="job-meta">
           <div className="meta-item">
-            <span className="meta-label">Location</span>
-            <span className="meta-value">{jobDetails.location}</span>
+            <span className="meta-label" style={{ color: "black" }}>
+              Location
+            </span>
+            <span className="meta-value" style={{ color: "black" }}>
+              {jobDetails.location}
+            </span>
           </div>
           <div className="meta-item">
             <span className="meta-label">Salary</span>
-            <span className="meta-value">{jobDetails.salary}</span>
+            <span className="meta-value" style={{ color: "black" }}>
+              {jobDetails.salary}
+            </span>
           </div>
         </div>
       </div>
@@ -121,16 +165,41 @@ const Description = () => {
           <div key={applicant.id} className="applicant-card">
             <div className="card-header">
               <div className="profile-section">
-                <img src={profileImage} alt="Profile" className="profile-image" />
+                <img
+                  src={profileImage}
+                  alt="Profile"
+                  className="profile-image"
+                />
                 <div className="profile-info">
-                  <h3>{applicant.name}</h3>
+                  {/* Set name to black */}
+                  <h3 style={{ color: "black" }}>{applicant.name}</h3>
                   <div className={`match-badge ${applicant.status}`}>
                     {applicant.matchPercentage}% match
                   </div>
                 </div>
               </div>
-              <button className="message-icon">
-                <i className="fas fa-message"></i>
+              <button
+                className="message-icon"
+                onClick={() => openModal(applicant)}
+                style={{
+                  background: "none",
+                  border: "none",
+                  cursor: "pointer",
+                  fontSize: "44px", // Increased font size
+                  color: "#1890ff", // Blue color (Note: This won't change the emoji color)
+                  padding: "12px", // Larger clickable area
+                  borderRadius: "50%", // Circular button
+                  transition: "transform 0.2s", // Smooth hover effect
+                }}
+                onMouseEnter={(e) => {
+                  e.currentTarget.style.transform = "scale(1.2)";
+                }}
+                onMouseLeave={(e) => {
+                  e.currentTarget.style.transform = "scale(1)";
+                }}
+                aria-label={`Message ${applicant.name}`} // Accessibility enhancement
+              >
+                🔵
               </button>
             </div>
 
@@ -143,11 +212,17 @@ const Description = () => {
             <div className="location-type">
               <div className="info-item">
                 <span className="label">Location</span>
-                <span className="value">{applicant.location}</span>
+                {/* Set location value to black */}
+                <span className="value" style={{ color: "black" }}>
+                  {applicant.location}
+                </span>
               </div>
               <div className="info-item">
                 <span className="label">Type</span>
-                <span className="value">{applicant.type}</span>
+                {/* Set type value to black */}
+                <span className="value" style={{ color: "black" }}>
+                  {applicant.type}
+                </span>
               </div>
             </div>
 
@@ -155,7 +230,9 @@ const Description = () => {
               <h4>Skills</h4>
               <div className="skills-list">
                 {applicant.skills.map((skill, index) => (
-                  <span key={index} className="skill-pill">{skill}</span>
+                  <span key={index} className="skill-pill">
+                    {skill}
+                  </span>
                 ))}
               </div>
             </div>
@@ -165,14 +242,25 @@ const Description = () => {
 
       {/* Pagination */}
       <div className="pagination">
-        <button className="nav-btn prev"><i className="fas fa-chevron-left"></i></button>
+        <button className="nav-btn prev">
+          <i className="fas fa-chevron-left"></i>
+        </button>
         <button className="page-btn active">1</button>
         <button className="page-btn">2</button>
         <button className="page-btn">3</button>
         <button className="page-btn">4</button>
         <button className="page-btn">5</button>
-        <button className="nav-btn next"><i className="fas fa-chevron-right"></i></button>
+        <button className="nav-btn next">
+          <i className="fas fa-chevron-right"></i>
+        </button>
       </div>
+
+      {/* Candidate Modal */}
+      <CandidateModal
+        isOpen={isModalOpen}
+        onClose={closeModal}
+        applicant={selectedApplicant}
+      />
     </div>
   );
 };

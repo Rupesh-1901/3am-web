@@ -1,9 +1,10 @@
 /* eslint-disable no-unused-vars */
 // src/pages/Provider/ViewApplicants.jsx
 
-import React from "react";
+import React , { useState } from "react";
 import { Link } from "react-router-dom";
 import framecard from "../../assets/images/applicantscard.png";
+import Premium from "./Premium";
 import companyLogo from "../../assets/companyLogo.svg";
 
 const jobCards = [
@@ -66,6 +67,7 @@ const jobCards = [
 ];
 
 const ViewApplicants = () => {
+  const [isPremiumOpen, setPremiumOpen] = useState(false);
   return (
     <>
       {/* Header Section */}
@@ -218,8 +220,9 @@ const ViewApplicants = () => {
               cursor: "pointer",
               fontSize: "16px",
             }}
+            onClick={() => setPremiumOpen(true)}
           >
-            Update Changes
+            Upgrade to Premium
           </button>
         </div>
 
@@ -331,6 +334,7 @@ const ViewApplicants = () => {
             </Link>
           ))}
         </div>
+        <Premium isOpen={isPremiumOpen} onClose={() => setPremiumOpen(false)} />
       </div>
     </>
   );

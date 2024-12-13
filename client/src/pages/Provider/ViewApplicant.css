@@ -3,153 +3,170 @@
   max-width: 1200px;
   margin: 0 auto;
   padding: 2rem;
-  background-color: #ffffff;
+  background-color: #f9fafb; /* Light background */
+}
+
+/* Header styles */
+.viewapplicants-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
 }
 
 .viewapplicants-title {
-  font-family: "Inter", sans-serif;
   font-size: 1.75rem;
   font-weight: 700;
-  text-align: left;
-  margin-bottom: 2rem;
-  color: #000300;
+  color: #111827;
 }
 
+.update-btn {
+  padding: 0.75rem 1.5rem;
+  background-color: #0a65cc;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.update-btn:hover {
+  background-color: #084c99;
+}
+
+/* Grid container styles */
 .viewapplicants-grid {
   display: grid;
-  grid-template-columns: repeat(1, 1fr);
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
   gap: 1.5rem;
 }
 
-@media (min-width: 768px) {
-  .viewapplicants-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-
-@media (min-width: 1024px) {
-  .viewapplicants-grid {
-    grid-template-columns: repeat(3, 1fr);
-  }
-}
-
+/* Card link styles */
 .viewapplicants-card-link {
   text-decoration: none;
+  color: inherit;
 }
 
+/* Card styles */
 .viewapplicants-card {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  background-color: #f3f4f6;
+  background: white;
   border-radius: 12px;
   padding: 1.5rem;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s ease;
-  text-align: center;
-  cursor: pointer;
-  gap: 20px;
-}
-
-.card-image {
-  flex-shrink: 0;
-  width: 80px;
-  height: 80px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   display: flex;
+  gap: 1.5rem;
   align-items: center;
-  justify-content: center;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
 .viewapplicants-card:hover {
-  transform: scale(1.05);
+  transform: translateY(-4px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+/* Card image */
+.card-image {
+  width: 64px;
+  height: 64px;
+  flex-shrink: 0;
 }
 
 .icon {
   width: 100%;
-  height: auto;
+  height: 100%;
   border-radius: 50%;
-  background-color: #e5e7eb;
+  object-fit: cover;
 }
 
+/* Card content */
 .card-content {
   flex: 1;
 }
 
 .card-title {
-  font-size: 1rem;
-  font-family: "Inter", sans-serif;
-  font-weight: 800;
-  color: #000;
-  margin-bottom: 0.25rem;
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #111827;
+  margin-bottom: 0.5rem;
 }
 
 .card-location {
   color: #0a65cc;
-  font-family: "Inter", sans-serif;
-  font-weight: 800;
   font-size: 0.875rem;
-  margin-bottom: 1rem;
+  font-weight: 500;
+  margin-bottom: 0.5rem;
 }
 
 .card-status {
   display: flex;
   align-items: center;
-  justify-content: center;
   gap: 0.5rem;
-  margin-bottom: 0.5rem;
+  margin-bottom: 0.75rem;
 }
 
 .status-dot {
   width: 8px;
   height: 8px;
-  background-color: #08c356;
+  background-color: #22c55e; /* Green dot for active status */
   border-radius: 50%;
 }
 
 .status-text {
   font-size: 0.875rem;
-  font-weight: 400;
-  color: #000000;
+  color: #374151;
 }
 
 .card-date {
-  color: #656565;
-  font-weight: 300;
   font-size: 0.75rem;
+  color: #6b7280;
   margin-bottom: 1rem;
 }
 
 .applications-box {
-  background-color: #ffffff;
-  color: #111827;
-  font-weight: bold;
-  padding: 0.5rem;
-  border-radius: 9999px;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
-}
-.viewapplicants-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 20px;
+  display: inline-block;
+  background-color: #f3f4f6;
+  padding: 0.5rem 1rem;
+  border-radius: 16px;
+  font-size: 0.875rem;
+  color: #374151;
+  font-weight: 500;
 }
 
-.viewapplicants-title {
-  font-size: 24px;
-  font-weight: bold;
+/* Media queries for responsiveness */
+@media (max-width: 768px) {
+  .viewapplicants-container {
+    padding: 1rem;
+  }
+
+  .viewapplicants-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .viewapplicants-header {
+    flex-direction: column;
+    gap: 1rem;
+    align-items: flex-start;
+  }
 }
 
-.upgrade-button {
-  background-color: #007bff;
-  color: white;
-  padding: 10px 20px;
-  border: none;
-  border-radius: 8px;
-  cursor: pointer;
-  font-size: 16px;
-  transition: background-color 0.3s ease;
-}
+@media (max-width: 480px) {
+  .viewapplicants-card {
+    flex-direction: column;
+    align-items: flex-start;
+  }
 
-.upgrade-button:hover {
-  background-color: #0056b3;
+  .card-image {
+    width: 48px;
+    height: 48px;
+  }
+
+  .card-title {
+    font-size: 1rem;
+  }
+
+  .update-btn {
+    padding: 0.5rem 1rem;
+    font-size: 0.875rem;
+  }
 }

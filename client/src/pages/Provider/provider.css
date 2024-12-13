@@ -4,7 +4,7 @@
 	display: flex;
 	flex-direction: column;
 	height: 100vh;
-	width: 100vw;
+	width: 100%;
 }
 
 .provider-tabs {
@@ -12,6 +12,7 @@
 	background-color: var(--bg-light);
 	padding: 10px 20px;
 	border-bottom: 1px solid var(--light-grey);
+	width: 100%;
 }
 
 .tab {
@@ -33,18 +34,20 @@
 }
 
 .provider-content {
+	
 	flex: 1;
 	padding: 0;
 	overflow-y: auto;
 	background-color: var(--bg-dark);
 	color: var(--white);
+	width: 100%;
 }
 
 /* CreateJobPost.css styles */
 
 .create-job-post-container {
 	max-width: 800px;
-	margin: 0 auto;
+	margin: 0 0;
 	padding: 20px;
 	background-color: var(--bg-light);
 	border-radius: 12px;
@@ -426,7 +429,7 @@ select option:hover {
 
 /* Hover effect for buttons */
 .contact-option-btn:hover {
-	background-color: #1296b0;
+	background-color: #d1dfe2;
 	color: white;
 }
 
@@ -462,7 +465,7 @@ select option:hover {
 }
 
 .option-btn.selected {
-	background-color: #0c7be3;
+	background-color: #e2ebf3;
 	color: white;
 }
 
@@ -500,13 +503,13 @@ select option:hover {
 
 /* When an option is selected in the 9th row */
 .form-row-9th .option-btn.selected {
-	background-color: #1269b0;
+	background-color: #dae2e9;
 	color: white;
 }
 
 /* Hover effect for buttons in 9th row */
 .form-row-9th .option-btn:hover {
-	background-color: #1269b0;
+	background-color: #e1ebf4;
 	color: white;
 }
 
@@ -600,7 +603,7 @@ select option:hover {
 
 /* Style for the Post a Job button */
 .post-job-btn {
-	background-color: #1269b0;
+	background-color: #dfe6ec;
 	/* Highlighted color */
 	color: white;
 	/* Text color */
@@ -625,7 +628,7 @@ select option:hover {
 }
 
 .post-job-btn:hover {
-	background-color: #0f548a;
+	background-color: #dce3e8;
 	/* Darker shade of blue on hover */
 }
 

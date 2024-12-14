@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 import { useEffect, useState } from "react";
 import "./LandingPage.css";
 import announcementLanding from "../../assets/announcementLanding.png";
@@ -58,16 +59,16 @@ const LandingPage = () => {
 												<path
 													d="M14.7359 21.3732C9.96323 21.3732 6.09423 17.5042 6.09423 12.7315C6.09423 7.95885 9.96323 4.08984 14.7359 4.08984C19.5086 4.08984 23.3776 7.95885 23.3776 12.7315C23.3776 17.5042 19.5086 21.3732 14.7359 21.3732Z"
 													stroke="#0066FF"
-													stroke-width="1.62031"
-													stroke-linecap="round"
-													stroke-linejoin="round"
+													strokeWidth="1.62031"
+													strokeLinecap="round"
+													strokeLinejoin="round"
 												/>
 												<path
 													d="M3.93378 23.5334L8.63269 18.8345"
 													stroke="#0066FF"
-													stroke-width="1.62031"
-													stroke-linecap="round"
-													stroke-linejoin="round"
+													strokeWidth="1.62031"
+													strokeLinecap="round"
+													strokeLinejoin="round"
 												/>
 											</svg>
 										</span>{" "}
@@ -93,9 +94,9 @@ const LandingPage = () => {
 												<path
 													d="M1.02955 1.68896L6.43059 7.09001L11.8316 1.68896"
 													stroke="#9199A3"
-													stroke-width="1.62031"
-													stroke-linecap="round"
-													stroke-linejoin="round"
+													strokeWidth="1.62031"
+													strokeLinecap="round"
+													strokeLinejoin="round"
 												/>
 											</svg>
 											<div
@@ -511,3 +512,20 @@ const LandingPage = () => {
 };
 
 export default LandingPage;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,13 +1,16 @@
 /* eslint-disable no-undef */
 /* eslint-disable react/prop-types */
 /* eslint-disable no-unused-vars */
+// src/components/ui/Navbar.jsx
+
 import React, { useState, useEffect } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 import OutsideClickHandler from "./OutsideClickHandler"; // Ensure this component is correctly implemented
 import companyLogo from "../../assets/companyLogo.svg";
-import framecard from "../../assets/images/applicantscard.png"; // If needed elsewhere
 
-const Navbar = () => {
+const Navbar = ({ language = "English", setLanguage }) => { // Set default language to "English"
+
+
   const location = useLocation();
   const navigate = useNavigate();
 
@@ -58,7 +61,7 @@ const Navbar = () => {
     {
       id: 3,
       name: "Customer Support",
-      isActive: false,
+      isActive: true,
       isDropdown: false,
       dropdown: [],
       clickAction: () => navigate("/home"),
@@ -67,23 +70,6 @@ const Navbar = () => {
 
   const [tabIndex, setTabIndex] = useState(0);
   const [openLanguageDropdown, setOpenLanguageDropdown] = useState(false);
-
-  // Define language options
-  const languages = [
-    {
-      name: "English",
-      flag: "https://upload.wikimedia.org/wikipedia/en/4/41/Flag_of_India.svg",
-    },
-    {
-      name: "Arabic",
-      flag: "https://upload.wikimedia.org/wikipedia/commons/thumb/d/dd/Flag_of_Oman.svg/383px-Flag_of_Oman.svg.png",
-    },
-  ];
-
-  // State for selected language, default is English
-  const [selectedLanguage, setSelectedLanguage] = useState(languages[0]);
-
-  // State to control Employers dropdown visibility
   const [isEmployersDropdownOpen, setIsEmployersDropdownOpen] = useState(false);
 
   // Translation data
@@ -109,6 +95,12 @@ const Navbar = () => {
       language: "اللغة",
     },
   };
+
+  // Safely access the current translations
+  const currentTranslations = translations[language] || translations["English"];
+
+    console.log("Current Translations:", currentTranslations);
+    console.log("Home Translation:", currentTranslations.home);
 
   useEffect(() => {
     if (location?.pathname === "/landing") {
@@ -191,7 +183,7 @@ const Navbar = () => {
                 textTransform: "none",
                 cursor: "pointer",
                 color:
-                  selectedLanguage.name === "Arabic"
+                  language === "Arabic"
                     ? "#000"
                     : tabIndex === index
                     ? "#1890ff"
@@ -201,7 +193,7 @@ const Navbar = () => {
               }}
             >
               <span>
-                {translations[selectedLanguage.name][
+                {currentTranslations[
                   item?.name.toLowerCase().replace(" ", "")
                 ] || item?.name}
               </span>
@@ -217,16 +209,15 @@ const Navbar = () => {
                     style={{
                       position: "absolute",
                       top: "30px",
-                      left: selectedLanguage.name === "Arabic" ? "auto" : "0",
-                      right: selectedLanguage.name === "Arabic" ? "0" : "auto",
+                      left: language === "Arabic" ? "auto" : "0",
+                      right: language === "Arabic" ? "0" : "auto",
                       backgroundColor: "white",
                       boxShadow: "0 4px 12px rgba(0,0,0,0.1)",
                       borderRadius: "8px",
                       padding: "10px 0",
                       zIndex: 1000,
                       minWidth: "150px",
-                      textAlign:
-                        selectedLanguage.name === "Arabic" ? "right" : "left",
+                      textAlign: language === "Arabic" ? "left" : "left",
                     }}
                   >
                     {item?.dropdown
@@ -248,8 +239,8 @@ const Navbar = () => {
                             alignItems: "center",
                             gap: "10px",
                             justifyContent:
-                              selectedLanguage.name === "Arabic"
-                                ? "flex-start" // Arabic alignment
+                              language === "Arabic"
+                                ? "flex-end" // Arabic alignment
                                 : "flex-start",
                           }}
                           onMouseEnter={(e) => {
@@ -259,7 +250,7 @@ const Navbar = () => {
                             e.currentTarget.style.backgroundColor = "white";
                           }}
                         >
-                          {translations[selectedLanguage.name][
+                          {currentTranslations[
                             it?.name.toLowerCase().replace(" ", "")
                           ] || it?.name}
                         </div>
@@ -317,25 +308,24 @@ const Navbar = () => {
               borderRadius: "8px",
               backgroundColor: "#fff",
               minWidth: "150px",
-              justifyContent:
-                selectedLanguage.name === "Arabic"
-                  ? "flex-start"
-                  : "flex-start",
+              justifyContent: "flex-start",
             }}
           >
             <img
-              src={selectedLanguage.flag}
-              alt={`${selectedLanguage.name} Flag`}
+              src={
+                language === "English"
+                  ? "https://upload.wikimedia.org/wikipedia/en/4/41/Flag_of_India.svg"
+                  : "https://upload.wikimedia.org/wikipedia/commons/thumb/d/dd/Flag_of_Oman.svg/383px-Flag_of_Oman.svg.png"
+              }
+              alt={`${language} Flag`}
               style={{
                 width: "20px",
                 height: "15px",
                 objectFit: "cover",
-                transform:
-                  selectedLanguage.name === "Arabic" ? "scaleX(-1)" : "none", // Optional: Flip flag for RTL
               }}
             />
             <span style={{ fontSize: "14px", color: "#333" }}>
-              {translations[selectedLanguage.name].language}
+              {currentTranslations.language}
             </span>
           </div>
 
@@ -357,15 +347,23 @@ const Navbar = () => {
                   marginTop: "5px",
                   zIndex: 1000,
                   width: "150px",
-                  textAlign:
-                    selectedLanguage.name === "Arabic" ? "right" : "left",
+                  textAlign: "left",
                 }}
               >
-                {languages.map((lang) => (
+                {[
+                  {
+                    name: "English",
+                    flag: "https://upload.wikimedia.org/wikipedia/en/4/41/Flag_of_India.svg",
+                  },
+                  {
+                    name: "Arabic",
+                    flag: "https://upload.wikimedia.org/wikipedia/commons/thumb/d/dd/Flag_of_Oman.svg/383px-Flag_of_Oman.svg.png",
+                  },
+                ].map((lang) => (
                   <div
                     key={lang.name}
                     onClick={() => {
-                      setSelectedLanguage(lang);
+                      setLanguage(lang.name); // **Use setLanguage from props**
                       setOpenLanguageDropdown(false);
                     }}
                     style={{
@@ -377,7 +375,7 @@ const Navbar = () => {
                       fontSize: "14px",
                       color: "#555",
                       justifyContent:
-                        selectedLanguage.name === "Arabic"
+                        lang.name === "Arabic"
                           ? "flex-start" // Arabic alignment
                           : "flex-start",
                     }}
@@ -395,15 +393,9 @@ const Navbar = () => {
                         width: "20px",
                         height: "15px",
                         objectFit: "cover",
-                        transform:
-                          lang.name === "Arabic" ? "scaleX(-1)" : "none", // Optional: Flip flag for RTL
                       }}
                     />
-                    <span>
-                      {translations[lang.name][
-                        lang.name.toLowerCase().replace(" ", "")
-                      ] || lang.name}
-                    </span>
+                    <span>{lang.name}</span>
                   </div>
                 ))}
               </div>
@@ -418,7 +410,4 @@ const Navbar = () => {
 };
 
 export default Navbar;
-
-
-
 

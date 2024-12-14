@@ -29,7 +29,7 @@
 		"react-slick": "^0.30.2",
 		"react-star-ratings": "^2.3.0",
 		"slick-carousel": "^1.8.1",
-		"sort-by": "^1.2.0",
+		"sort-by": "^0.0.2",
 		"styled-components": "^6.1.13"
 	},
 	"devDependencies": {

@@ -7,7 +7,7 @@ import "../index.css"; // Optional: For custom styles
 const ProviderLayout = () => {
   return (
     <div className="provider-container">
-      <nav className="provider-tabs">
+      {/* <nav className="provider-tabs">
         <NavLink
           to="create-job-post"
           className={({ isActive }) => (isActive ? "tab active" : "tab")}
@@ -26,7 +26,7 @@ const ProviderLayout = () => {
         >
           Profile
         </NavLink>
-      </nav>
+      </nav> */}
       <div className="provider-content">
         <Outlet />
       </div>

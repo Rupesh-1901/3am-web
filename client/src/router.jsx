@@ -12,6 +12,7 @@ import ProviderLayout from "./layouts/ProviderLayout";
 import CreateJobPost from "./pages/Provider/CreateJobPost";
 import ViewApplicants from "./pages/Provider/ViewApplicant";
 import ProfilePage from "./pages/Provider/ProfilePage";
+import Description from "./pages/Provider/Description";
 
 const router = new createBrowserRouter([
 	{
@@ -73,6 +74,10 @@ const router = new createBrowserRouter([
 					{
 						index: true,
 						element: <CreateJobPost />,
+					},
+					{
+						path: "view-applicants/description/:id",
+						element: <Description />,
 					},
 				],
 			},

@@ -2,26 +2,22 @@ import express from "express";
 import cors from "cors";
 import globalErrorHandler from "./middlewares/globalErrorHandler.js";
 import userRouter from "./user/userRouter.js";
-// import bookRouter from "./book/bookRouter.js";
+// import postRouter from "./book/postRouter.js";
 import { config } from "./config/config.js";
+import jobRouter from "./job/jobRouter.js";
 
 const app = express();
 
 app.use(
-  cors({
-    origin: config.frontendDomain,
-  })
+	cors({
+		origin: config.frontendDomain,
+	})
 );
 
 app.use(express.json()); // for reading payloads
 
-// Routes
-app.get("/", (req, res) => {
-  res.json({ message: "Welcome to elib apis" });
-});
-
 app.use("/api/users", userRouter);
-// app.use("/api/books", bookRouter);
+app.use("/api/job", jobRouter);
 
 // Global error handler
 app.use(globalErrorHandler);

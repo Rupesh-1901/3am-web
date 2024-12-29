@@ -13,13 +13,116 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
-model User {
+model AdminUser {
   id        BigInt   @id @default(autoincrement())
   email     String   @unique
   fullName  String
-  userName String
+  userName  String
   password  String
   loginType String
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
 }
+
+model HrUser {
+  id        BigInt    @id @default(autoincrement())
+  email     String    @unique
+  fullName  String
+  userName  String
+  password  String
+  loginType String
+  createdAt DateTime  @default(now())
+  updatedAt DateTime  @updatedAt
+  jobs      JobPost[]
+}
+
+model JobPost {
+  id                 Int           @id @default(autoincrement())
+  jobTitle           Int
+  jobLocation        Int
+  numberOfOpenings   Int
+  area               Int
+  experience         Int
+  monthlyInHand      String
+  isBonusAvailable   Boolean
+  jobDescription     String
+  skills             Int
+  preferredLanguage  String?
+  age                String?
+  certification      String?
+  specialization     String?
+  // employmentType EmploymentType
+  employmentType     String
+  interviewMethod    String
+  companyName        String
+  sizeOfOrganisation String
+  jobAddress         String
+  phoneNumber        String
+  emailId            String
+  isActive           Boolean
+  createdAt          DateTime      @default(now())
+  updatedAt          DateTime      @updatedAt
+  hrId               BigInt
+  hr                 HrUser        @relation(fields: [hrId], references: [id])
+  applications       Application[]
+}
+
+model JobSeekerUser {
+  id           BigInt        @id @default(autoincrement())
+  email        String        @unique
+  fullName     String
+  userName     String
+  password     String
+  loginType    String
+  createdAt    DateTime      @default(now())
+  updatedAt    DateTime      @updatedAt
+  applications Application[]
+}
+
+model Application {
+  id          Int           @id @default(autoincrement())
+  coverLetter String
+  resume      String // URL or file path to resume
+  appliedAt   DateTime      @default(now())
+  jobPostId   Int           @unique
+  jobSeekerId BigInt        @unique
+  jobPost     JobPost       @relation(fields: [jobPostId], references: [id])
+  jobSeeker   JobSeekerUser @relation(fields: [jobSeekerId], references: [id])
+}
+
+model Sector {
+  id       Int          @id @default(autoincrement())
+  name     String       @unique
+  category Categories[]
+}
+
+model Categories {
+  id       Int        @id @default(autoincrement())
+  name     String     @unique
+  sectorId Int
+  sector   Sector     @relation(fields: [sectorId], references: [id])
+  jobTitle JobTitle[]
+}
+
+model JobTitle {
+  id         Int        @id @default(autoincrement())
+  name       String     @unique
+  categoryId Int
+  category   Categories @relation(fields: [categoryId], references: [id])
+  skills     Skills[]
+}
+
+model Skills {
+  id         Int      @id @default(autoincrement())
+  name       String   @unique
+  jobTitleId Int
+  jobTitle   JobTitle @relation(fields: [jobTitleId], references: [id])
+}
+
+// enum EmploymentType {
+//   FULL_TIME
+//   PART_TIME
+//   INTERNSHIP
+//   FREELANCE
+//   OTHER
+// }

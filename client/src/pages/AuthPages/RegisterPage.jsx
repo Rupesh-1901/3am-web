@@ -28,7 +28,7 @@ const RegisterPage = () => {
   const dispatch = useDispatch();
   const [formValues, setFormValues] = useState(null);
   const [password, setPassword] = useState("password");
-  const [selectedMode, setSelectedMode] = useState("employee");
+  const [selectedMode, setSelectedMode] = useState("employer");
   const navigate = useNavigate();
   const initialvalue = {
     fullName: "",
@@ -71,7 +71,7 @@ const RegisterPage = () => {
       values?.password === values?.confirmpassword &&
       values?.termsAndConditions
     ) {
-      const payload = { ...values, loginType: selectedMode };
+      const payload = { ...values, role: selectedMode };
 
       create(payload);
     } else if (!values?.termsAndConditions) {
@@ -163,10 +163,10 @@ const RegisterPage = () => {
                         </div>{" "}
                         <div
                           className={`loginTabButton cursor ${
-                            selectedMode === "employee" ? "activeLoginMode" : ""
+                            selectedMode === "employer" ? "activeLoginMode" : ""
                           }`}
                           onClick={() => {
-                            setSelectedMode("employee");
+                            setSelectedMode("employer");
                           }}
                         >
                           <img

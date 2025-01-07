@@ -22,7 +22,7 @@ const LoginPage = () => {
   const [password, setPassword] = useState("password");
   const navigate = useNavigate();
   const location = useLocation();
-  const [selectedMode, setSelectedMode] = useState("employee");
+  const [selectedMode, setSelectedMode] = useState("employer");
   const initialvalue = { email: "", password: "" };
   console.log("object formValues", formValues);
   useEffect(() => {
@@ -65,11 +65,11 @@ const LoginPage = () => {
   console.log("formValues", formValues);
 
   const onSubmit = (values) => {
-    const payload = { ...values, loginType: selectedMode };
+    const payload = { ...values, role: selectedMode };
 
     create(payload);
     // console.log("object values", values);
-    // if (values?.email === "rupesh" && values?.password === "rupesh" && selectedMode === "employee") {
+    // if (values?.email === "rupesh" && values?.password === "rupesh" && selectedMode === "employer") {
     // 	dispatch(tempLogin(true));
     // 	navigate("/home");
     // } else dispatch(tempLogin(false));
@@ -146,10 +146,10 @@ const LoginPage = () => {
                         </div>{" "}
                         <div
                           className={`loginTabButton cursor ${
-                            selectedMode === "employee" ? "activeLoginMode" : ""
+                            selectedMode === "employer" ? "activeLoginMode" : ""
                           }`}
                           onClick={() => {
-                            setSelectedMode("employee");
+                            setSelectedMode("employer");
                           }}
                         >
                           <img

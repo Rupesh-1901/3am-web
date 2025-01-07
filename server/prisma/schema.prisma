@@ -19,7 +19,9 @@ model AdminUser {
   fullName  String
   userName  String
   password  String
-  loginType String
+  role String
+    isActive     Boolean
+  isDeleted    Boolean
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
 }
@@ -30,14 +32,29 @@ model HrUser {
   fullName  String
   userName  String
   password  String
-  loginType String
+  role String
+    isActive     Boolean
+  isDeleted    Boolean
   createdAt DateTime  @default(now())
   updatedAt DateTime  @updatedAt
   jobs      JobPost[]
 }
+model JobSeekerUser {
+  id           BigInt        @id @default(autoincrement())
+  email        String        @unique
+  fullName     String
+  userName     String
+  password     String
+  role         String
+  isActive     Boolean
+  isDeleted    Boolean
+  createdAt    DateTime      @default(now())
+  updatedAt    DateTime      @updatedAt
+  applications Application[]
+}
 
 model JobPost {
-  id                 Int           @id @default(autoincrement())
+  id                 BigInt           @id @default(autoincrement())
   jobTitle           Int
   jobLocation        Int
   numberOfOpenings   Int
@@ -59,7 +76,8 @@ model JobPost {
   jobAddress         String
   phoneNumber        String
   emailId            String
-  isActive           Boolean
+  isActive           Boolean   @default(true)
+  isDeleted          Boolean  @default(false)
   createdAt          DateTime      @default(now())
   updatedAt          DateTime      @updatedAt
   hrId               BigInt
@@ -67,24 +85,13 @@ model JobPost {
   applications       Application[]
 }
 
-model JobSeekerUser {
-  id           BigInt        @id @default(autoincrement())
-  email        String        @unique
-  fullName     String
-  userName     String
-  password     String
-  loginType    String
-  createdAt    DateTime      @default(now())
-  updatedAt    DateTime      @updatedAt
-  applications Application[]
-}
 
 model Application {
-  id          Int           @id @default(autoincrement())
+  id          BigInt           @id @default(autoincrement())
   coverLetter String
   resume      String // URL or file path to resume
   appliedAt   DateTime      @default(now())
-  jobPostId   Int           @unique
+  jobPostId   BigInt           @unique
   jobSeekerId BigInt        @unique
   jobPost     JobPost       @relation(fields: [jobPostId], references: [id])
   jobSeeker   JobSeekerUser @relation(fields: [jobSeekerId], references: [id])
@@ -93,6 +100,8 @@ model Application {
 model Sector {
   id       Int          @id @default(autoincrement())
   name     String       @unique
+  isActive           Boolean   @default(true)
+  isDeleted          Boolean  @default(false)
   category Categories[]
 }
 
@@ -102,6 +111,8 @@ model Categories {
   sectorId Int
   sector   Sector     @relation(fields: [sectorId], references: [id])
   jobTitle JobTitle[]
+    isActive           Boolean   @default(true)
+  isDeleted          Boolean  @default(false)
 }
 
 model JobTitle {
@@ -110,6 +121,8 @@ model JobTitle {
   categoryId Int
   category   Categories @relation(fields: [categoryId], references: [id])
   skills     Skills[]
+    isActive           Boolean   @default(true)
+  isDeleted          Boolean  @default(false)
 }
 
 model Skills {
@@ -117,6 +130,8 @@ model Skills {
   name       String   @unique
   jobTitleId Int
   jobTitle   JobTitle @relation(fields: [jobTitleId], references: [id])
+    isActive           Boolean   @default(true)
+  isDeleted          Boolean  @default(false)
 }
 
 // enum EmploymentType {

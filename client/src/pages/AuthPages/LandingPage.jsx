@@ -35,7 +35,8 @@ const LandingPage = () => {
   const translations = {
     English: {
       connectingProviders: "Connecting Providers with Seekers",
-      findThePerfectJob: "Find the Perfect Job that Matches Your Interests & Skills.",
+      findThePerfectJob:
+        "Find the Perfect Job that Matches Your Interests & Skills.",
       loremIpsum:
         "Aliquam vitae turpis in diam convallis finibus in at risus. Nullam in scelerisque leo, eget sollicitudin velit vestibulum.",
       whatDoWeDo: "What do we do?",
@@ -53,7 +54,8 @@ const LandingPage = () => {
     },
     Arabic: {
       connectingProviders: "ربط المزودين بالباحثين",
-      findThePerfectJob: "ابحث عن الوظيفة المثالية التي تتناسب مع اهتماماتك ومهاراتك.",
+      findThePerfectJob:
+        "ابحث عن الوظيفة المثالية التي تتناسب مع اهتماماتك ومهاراتك.",
       loremIpsum:
         "أليكوام فيتاي توربيس إن ديام كونفاليس فينيبوس إن أت ريسوس. نولام إن سكيليريسك لي، إيجيت سولليسيتودين فيليت vestibulum.",
       whatDoWeDo: "ماذا نفعل؟",
@@ -204,7 +206,7 @@ const LandingPage = () => {
                     }}
                     onClick={() => {
                       navigate("/auth/login", {
-                        state: { logInUser: "employee" },
+                        state: { logInUser: "employer" },
                       });
                     }}
                   >
@@ -636,20 +638,3 @@ const LandingPage = () => {
 };
 
 export default LandingPage;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

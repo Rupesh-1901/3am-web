@@ -12,71 +12,96 @@ import ProviderLayout from "./layouts/ProviderLayout";
 import CreateJobPost from "./pages/Provider/CreateJobPost";
 import ViewApplicants from "./pages/Provider/ViewApplicant";
 import ProfilePage from "./pages/Provider/ProfilePage";
+import CoordLandingPage from "./pages/Coordinator/CoordLandingPage";
+import CoordinatorApplicantsPage from "./pages/Coordinator/CoordApplicantPage";
+import Description from "./pages/Provider/Description";
+import CoordinatorIndApplicant from "./pages/Coordinator/CoordinatorApplicant";
 
 const router = new createBrowserRouter([
-	{
-		element: <NoAuth />,
-		children: [
-			{
-				path: "/auth",
-				element: <AuthPage />,
-				children: [
-					{
-						path: "login",
-						element: <LoginPage />,
-					},
-					{
-						path: "register",
-						element: <RegisterPage />,
-					},
-					{
-						path: "forgot-password",
-						element: <ForgotPassword />,
-					},
-				],
-			},
-			{
-				path: "/reset-password",
-				element: <ResetPassword />,
-			},
-			{
-				path: "/landing",
-				element: <LandingPage />,
-			},
-		],
-	},
+  {
+    element: <NoAuth />,
+    children: [
+      {
+        path: "/auth",
+        element: <AuthPage />,
+        children: [
+          {
+            path: "login",
+            element: <LoginPage />,
+          },
+          {
+            path: "register",
+            element: <RegisterPage />,
+          },
+          {
+            path: "forgot-password",
+            element: <ForgotPassword />,
+          },
+        ],
+      },
+      {
+        path: "/reset-password",
+        element: <ResetPassword />,
+      },
+      {
+        path: "/landing",
+        element: <LandingPage />,
+      },
+    ],
+  },
 
-	{
-		element: <AuthRequired />,
-		path: "/",
-		children: [
-			{
-				path: "home",
-				element: <HomePage />,
-			},
-			{
-				path: "provider",
-				element: <ProviderLayout />,
-				children: [
-					{
-						path: "create-job-post",
-						element: <CreateJobPost />,
-					},
-					{
-						path: "view-applicants",
-						element: <ViewApplicants />,
-					},
-					{
-						path: "profile",
-						element: <ProfilePage />,
-					},
-					{
-						index: true,
-						element: <CreateJobPost />,
-					},
-				],
-			},
-		],
-	},
+  {
+    element: <AuthRequired />,
+    path: "/",
+    children: [
+      {
+        path: "home",
+        element: <HomePage />,
+      },
+      {
+        path: "provider",
+        element: <ProviderLayout />,
+        children: [
+          {
+            path: "create-job-post",
+            element: <CreateJobPost />,
+          },
+          {
+            path: "view-applicants",
+            element: <ViewApplicants />,
+          },
+          {
+            path: "profile",
+            element: <ProfilePage />,
+          },
+          {
+            index: true,
+            element: <CreateJobPost />,
+          },
+          {
+            path: "view-applicants/description/:id",
+            element: <Description />,
+          },
+        ],
+      },
+    ],
+  },
+  {
+    element: <NoAuth />,
+    children: [
+      {
+        path: "/coordinator/landing-page",
+        element: <CoordLandingPage />,
+      },
+      {
+        path: "/coordinator/applicants-page",
+        element: <CoordinatorApplicantsPage />,
+      },
+      {
+        path: "/coordinator/applicant-page",
+        element: <CoordinatorIndApplicant />,
+      },
+    ],
+  },
 ]);
 export default router;

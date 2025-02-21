@@ -5,7 +5,8 @@ import { Modal } from "antd"; // Importing Modal if needed, but we're using a se
 import "antd/dist/reset.css";
 // Import Ant Design styles
 import "./Description.css";
-import profileImage from "../../assets/images/profile-placeholder.png";
+import profileImage from "../../assets/RupeshBhai.svg";
+
 import CandidateModal from "./CandidateModal"; // Ensure the path is correct
 
 const Description = () => {

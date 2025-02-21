@@ -36,6 +36,12 @@ const LoginPage = () => {
   }, [location]);
   const create = async (payload) => {
     try {
+      console.log(payload);
+      if (selectedMode === "Coordinator") {
+        navigate("/coordinator/landing-page");
+      } else {
+        navigate("/home");
+      }
       const response = await axios.post(
         "http://localhost:5513" + "/api/users/login",
         payload
@@ -48,7 +54,6 @@ const LoginPage = () => {
         })
       );
       dispatch(tempLogin(true));
-      navigate("/home");
     } catch (error) {
       dispatch(
         showToast({
@@ -116,13 +121,16 @@ const LoginPage = () => {
                         Create Now
                       </span>
                     </div>
-                    <div className="loginAs">
+                    <div
+                      className="loginAs"
+                      style={{ width: "37.5vw", padding: "0 1rem 1rem 1rem" }}
+                    >
                       <div className="loginAsFont">Log in as</div>
                       <div
                         style={{
                           width: "100%",
                           display: "flex",
-                          justifyContent: "center",
+                          justifyContent: "space-between",
                           gap: "22px",
                         }}
                       >
@@ -142,7 +150,12 @@ const LoginPage = () => {
                             src={candidateLogin}
                             alt=""
                           />{" "}
-                          <p className="loginTabButtonFont ">Candidate</p>
+                          <p
+                            className="loginTabButtonFont "
+                            style={{ marginTop: "1rem" }}
+                          >
+                            Candidate
+                          </p>
                         </div>{" "}
                         <div
                           className={`loginTabButton cursor ${
@@ -157,7 +170,34 @@ const LoginPage = () => {
                             src={employerLogin}
                             alt=""
                           />{" "}
-                          <p className="loginTabButtonFont">Employer</p>
+                          <p
+                            className="loginTabButtonFont"
+                            style={{ marginTop: "1rem" }}
+                          >
+                            Employer
+                          </p>
+                        </div>{" "}
+                        <div
+                          className={`loginTabButton cursor ${
+                            selectedMode === "Coordinator"
+                              ? "activeLoginMode"
+                              : ""
+                          }`}
+                          onClick={() => {
+                            setSelectedMode("Coordinator");
+                          }}
+                        >
+                          <img
+                            style={{ height: "17px" }}
+                            src={employerLogin}
+                            alt=""
+                          />{" "}
+                          <p
+                            className="loginTabButtonFont"
+                            style={{ marginTop: "1.2rem" }}
+                          >
+                            Coordinator
+                          </p>
                         </div>
                       </div>
                     </div>

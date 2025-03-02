@@ -1,21 +1,18 @@
 /* src/layouts/provider.css */
 
 .provider-container {
-	display: flex;
-	flex-direction: column;
-	height: 100vh;
-	width: 100%;
-}
-textarea {
-  resize: none !important;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  width: 100%;
 }
 
 .provider-tabs {
-	display: flex;
-	background-color: var(--bg-light);
-	padding: 10px 20px;
-	border-bottom: 1px solid var(--light-grey);
-	width: 100%;
+  display: flex;
+  background-color: var(--bg-light);
+  padding: 10px 20px;
+  border-bottom: 1px solid var(--light-grey);
+  width: 100%;
 }
 
 .tab {
@@ -37,24 +34,24 @@ textarea {
 }
 
 .provider-content {
-	
-	flex: 1;
-	padding: 0;
-	overflow-y: auto;
-	background-color: var(--bg-dark);
-	color: var(--white);
-	width: 100%;
+
+  flex: 1;
+  padding: 0;
+  overflow-y: auto;
+  background-color: var(--bg-dark);
+  color: var(--white);
+  width: 100%;
 }
 
 /* CreateJobPost.css styles */
 
 .create-job-post-container {
-	max-width: 800px;
-	margin: 0 0;
-	padding: 20px;
-	background-color: var(--bg-light);
-	border-radius: 12px;
-	box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  max-width: 800px;
+  margin: 0 0;
+  padding: 20px;
+  background-color: var(--bg-light);
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 
 .create-job-post-form {
@@ -227,14 +224,10 @@ textarea {
   justify-content: center;
   align-items: center;
 }
-.left-section {
-  margin-top: -4rem;
-}
 
 .right-section {
   background-color: white;
   /* Ensure white background for the SVG */
-  margin-top: 2rem;
 }
 
 .job-post-svg {
@@ -436,8 +429,8 @@ select option:hover {
 
 /* Hover effect for buttons */
 .contact-option-btn:hover {
-	background-color: #d1dfe2;
-	color: white;
+  background-color: #d1dfe2;
+  color: white;
 }
 
 /* Form Row 9th: Preferences Buttons */
@@ -472,8 +465,8 @@ select option:hover {
 }
 
 .option-btn.selected {
-	background-color: #e2ebf3;
-	color: white;
+  background-color: #e2ebf3;
+  color: white;
 }
 
 /* Button hover effect */
@@ -510,14 +503,14 @@ select option:hover {
 
 /* When an option is selected in the 9th row */
 .form-row-9th .option-btn.selected {
-	background-color: #dae2e9;
-	color: white;
+  background-color: #dae2e9;
+  color: white;
 }
 
 /* Hover effect for buttons in 9th row */
 .form-row-9th .option-btn:hover {
-	background-color: #e1ebf4;
-	color: white;
+  background-color: #e1ebf4;
+  color: white;
 }
 
 /* Style for rounded corners on textarea */
@@ -610,33 +603,33 @@ select option:hover {
 
 /* Style for the Post a Job button */
 .post-job-btn {
-	background-color: #dfe6ec;
-	/* Highlighted color */
-	color: white;
-	/* Text color */
-	border: none;
-	/* Remove default border */
-	padding: 10px 20px;
-	/* Padding for the button */
-	font-size: 16px;
-	/* Font size */
-	border-radius: 5px;
-	/* Rounded corners */
-	cursor: pointer;
-	/* Pointer cursor on hover */
-	width: 100%;
-	/* Make button fill the width */
-	max-width: 200px;
-	/* Limit max width for better appearance */
-	display: block;
-	/* Display as a block element */
-	margin: 20px auto;
-	/* Center button and add margin */
+  background-color: #dfe6ec;
+  /* Highlighted color */
+  color: white;
+  /* Text color */
+  border: none;
+  /* Remove default border */
+  padding: 10px 20px;
+  /* Padding for the button */
+  font-size: 16px;
+  /* Font size */
+  border-radius: 5px;
+  /* Rounded corners */
+  cursor: pointer;
+  /* Pointer cursor on hover */
+  width: 100%;
+  /* Make button fill the width */
+  max-width: 200px;
+  /* Limit max width for better appearance */
+  display: block;
+  /* Display as a block element */
+  margin: 20px auto;
+  /* Center button and add margin */
 }
 
 .post-job-btn:hover {
-	background-color: #dce3e8;
-	/* Darker shade of blue on hover */
+  background-color: #dce3e8;
+  /* Darker shade of blue on hover */
 }
 
 .input-textarea {

@@ -6,6 +6,7 @@ import "antd/dist/reset.css";
 // Import Ant Design styles
 import "./Description.css";
 import profileImage from "../../assets/RupeshBhai.svg";
+// import profileImage from "../../assets/images/profile-placeholder.png";
 
 import CandidateModal from "./CandidateModal"; // Ensure the path is correct
 
@@ -117,23 +118,49 @@ const Description = () => {
   return (
     <div className="description-container" style={{ background: "white" }}>
       {/* Job Details Section */}
-      <div className="job-details">
-        <h1>{jobDetails.title}</h1>
-        <p className="job-description" style={{ color: "black" }}>
+      <div className="job-details" style={{ 
+        alignContent:'flex-start',
+        alignItems:'flex-start',
+        display: 'flex', 
+        flexDirection: 'column',
+        gap: '20px',
+        // maxWidth: '800px',
+        margin: '0 auto',
+        padding: '20px'
+      }}>
+        <h1 style={{ marginBottom: '10px' }}>{jobDetails.title}</h1>
+        <p className="job-description" style={{ 
+          color: "black",
+          fontSize: '16px',
+          lineHeight: '1.6'
+        }}>
           {jobDetails.description}
         </p>
-        <div className="requirements" style={{ color: "black" }}>
+        <div className="requirements" style={{ 
+          color: "black",
+          display: 'flex',
+          flexDirection: 'column',
+          gap: '10px'
+        }}>
           <strong>Requirements:</strong>
-          <ul>
+          <ul style={{ paddingLeft: '20px' }}>
             {jobDetails.requirements.map((req, index) => (
               <li key={index}>{req}</li>
             ))}
           </ul>
         </div>
 
-        <div className="skillset-section">
+        <div className="skillset-section" style={{ 
+          display: 'flex',
+          flexDirection: 'column',
+          gap: '10px'
+        }}>
           <h2>Skillset Required</h2>
-          <div className="skills-container">
+          <div className="skills-container" style={{
+            display: 'flex',
+            flexWrap: 'wrap',
+            gap: '10px'
+          }}>
             {jobDetails.skills.map((skill, index) => (
               <span key={index} className="skill-tag">
                 {skill}
@@ -142,17 +169,33 @@ const Description = () => {
           </div>
         </div>
 
-        <div className="job-meta">
-          <div className="meta-item">
-            <span className="meta-label" style={{ color: "black" }}>
+        <div className="job-meta" style={{
+          display: 'flex',
+          flexDirection: 'column',
+          gap: '15px'
+        }}>
+          <div className="meta-item" style={{
+            display: 'flex',
+            flexDirection: 'column',
+            gap: '5px',
+            alignItems:'flex-start'
+          }}>
+            <span className="meta-label" style={{ color: "black", fontWeight: 'bold' }}>
               Location
             </span>
             <span className="meta-value" style={{ color: "black" }}>
               {jobDetails.location}
             </span>
           </div>
-          <div className="meta-item">
-            <span className="meta-label">Salary</span>
+          <div className="meta-item" style={{
+            display: 'flex',
+            flexDirection: 'column',
+            gap: '5px',
+            alignItems:'flex-start'
+          }}>
+            <span className="meta-label" style={{ color: "black", fontWeight: 'bold' }}>
+              Salary
+            </span>
             <span className="meta-value" style={{ color: "black" }}>
               {jobDetails.salary}
             </span>

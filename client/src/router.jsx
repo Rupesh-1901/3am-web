@@ -12,7 +12,10 @@ import ProviderLayout from "./layouts/ProviderLayout";
 import CreateJobPost from "./pages/Provider/CreateJobPost";
 import ViewApplicants from "./pages/Provider/ViewApplicant";
 import ProfilePage from "./pages/Provider/ProfilePage";
+import CoordLandingPage from "./pages/Coordinator/CoordLandingPage";
+import CoordinatorApplicantsPage from "./pages/Coordinator/CoordApplicantPage";
 import Description from "./pages/Provider/Description";
+import CoordinatorIndApplicant from "./pages/Coordinator/CoordinatorApplicant";
 
 const router = new createBrowserRouter([
 	{
@@ -81,7 +84,37 @@ const router = new createBrowserRouter([
 					},
 				],
 			},
+
+			{
+				path: "/coordinator/landing-page",
+				element: <CoordLandingPage />,
+			},
+			{
+				path: "/coordinator/applicants-page",
+				element: <CoordinatorApplicantsPage />,
+			},
+			{
+				path: "/coordinator/applicant-page",
+				element: <CoordinatorIndApplicant />,
+			},
 		],
 	},
+	// {
+	//   element: <NoAuth />,
+	//   children: [
+	//     {
+	//       path: "/coordinator/landing-page",
+	//       element: <CoordLandingPage />,
+	//     },
+	//     {
+	//       path: "/coordinator/applicants-page",
+	//       element: <CoordinatorApplicantsPage />,
+	//     },
+	//     {
+	//       path: "/coordinator/applicant-page",
+	//       element: <CoordinatorIndApplicant />,
+	//     },
+	//   ],
+	// },
 ]);
 export default router;

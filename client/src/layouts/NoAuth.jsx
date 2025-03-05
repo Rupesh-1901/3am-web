@@ -4,13 +4,20 @@ import { useSelector } from "react-redux";
 
 const NoAuth = () => {
 	const { isTempLogin } = useSelector((state) => state.auth);
+	const { loginType } = useSelector((state) => state.auth);
 	const location = useLocation();
 	return (
 		<>
 			{!isTempLogin ? (
 				<Outlet />
 			) : (
-				<Navigate state={{ from: location }} to={`${isTempLogin && "/home"}`} replace />
+				<Navigate
+					state={{ from: location }}
+					to={`${
+						isTempLogin && (loginType === "Coordinator" ? "/coordinator/landing-page" : "/home")
+					}`}
+					replace
+				/>
 			)}
 		</>
 	);

@@ -397,7 +397,7 @@ const CreateJobPost = () => {
                 className="input-textarea rounded-corners" // Applying the class for rounded corners
                 rows="4" // Adjust the height of the textarea
                 required
-              />
+                              />
             </div>
           </div>
           {/* 14th Row: Phone Number and Email ID */}

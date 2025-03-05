@@ -2,6 +2,7 @@ import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
 	isTempLogin: false,
+	loginType: "",
 	userLogin: false,
 	userType: localStorage.getItem("userType") || null,
 	candidateLogin: false,
@@ -52,6 +53,9 @@ const authSlice = createSlice({
 		tempLogin: (state, action) => {
 			state.isTempLogin = action.payload;
 		},
+		loginTypeFunc: (state, action) => {
+			state.loginType = action.payload;
+		},
 		loggedOut: (state) => {
 			state.userLogin = false;
 			state.candidateLogin = false;
@@ -72,6 +76,13 @@ const authSlice = createSlice({
 	},
 });
 
-export const { checkLogin, loggedOut, isLoading, isFollowLoading, setEmployeeData, tempLogin } =
-	authSlice.actions;
+export const {
+	checkLogin,
+	loggedOut,
+	isLoading,
+	isFollowLoading,
+	setEmployeeData,
+	tempLogin,
+	loginTypeFunc,
+} = authSlice.actions;
 export default authSlice.reducer;

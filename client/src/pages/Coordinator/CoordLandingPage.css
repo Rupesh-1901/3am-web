@@ -1,0 +1,152 @@
+/* User Info Bar */
+.user-info-bar {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  background-color: white;
+  padding: 10px 20px;
+  gap: 1.5rem;
+  /* box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1); */
+}
+
+/* User Avatar */
+.user-avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+/* User Details */
+.user-details {
+  margin-left: 10px;
+  text-align: right;
+}
+
+.user-name {
+  font-size: 16px;
+  font-weight: bold;
+  color: #333;
+}
+
+.user-location {
+  font-size: 14px;
+  color: #666;
+}
+
+/* Down Arrow */
+.dropdown-arrow {
+  margin-left: 10px;
+  font-size: 16px;
+  cursor: pointer;
+}
+.centered-image {
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+  justify-content: space-evenly;
+  align-items: center;
+}
+.jobProvider {
+  height: 21vw;
+  width: 30vw;
+  margin-top: 9vh;
+  transition: transform 0.3s ease-in-out;
+  cursor: pointer;
+}
+.jobSeeker {
+  height: 20vw;
+  width: 30vw;
+  transition: transform 0.3s ease-in-out;
+  cursor: pointer;
+}
+.jobProvider:hover,
+.jobSeeker:hover {
+  transform: scale(1.1); /* Makes the image pop out */
+}
+
+/* Statistics Container */
+.stats-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 30px auto;
+  padding: 20px;
+  background-color: #ffffff;
+  border-radius: 10px;
+  /* box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); */
+  width: 80%;
+  max-width: 900px;
+}
+
+/* Individual Stat Card */
+.stats-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  margin-top: 6rem;
+}
+
+.stat-card {
+  display: flex;
+  align-items: center;
+  flex: 1;
+  text-align: left;
+  padding: 20px;
+  color: #000;
+}
+
+/* Icon */
+.stat-icon {
+  width: 50px;
+  height: 50px;
+  margin-right: 15px;
+}
+
+/* Text Content */
+.stat-content {
+  display: flex;
+  flex-direction: column;
+}
+
+.stat-title {
+  font-size: 16px;
+  font-weight: bold;
+  margin: 0;
+}
+
+.stat-number {
+  font-size: 24px;
+  font-weight: bold;
+  color: #333;
+  margin: 5px 0;
+}
+
+.stat-change {
+  font-size: 14px;
+  font-weight: bold;
+  margin-top: 5px;
+  display: flex;
+  align-items: center;
+}
+
+.stat-change span {
+  font-weight: normal;
+  margin-left: 5px;
+}
+
+.stat-change.positive {
+  color: green;
+}
+
+.stat-change.negative {
+  color: red;
+}
+
+/* Vertical Separator */
+.separator {
+  width: 2px;
+  background-color: #ddd;
+  height: 80px;
+}

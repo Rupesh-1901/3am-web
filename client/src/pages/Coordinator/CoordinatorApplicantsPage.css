@@ -1,0 +1,561 @@
+/* CoordinatorApplicantsPage.css */
+/* .coordinator-applicants-page {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  font-family: Arial, sans-serif;
+} */
+
+/* Navbar */
+.navbar1 {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #ffffff;
+  padding: 10px 30px; /* Space on left and right */
+  width: 60%;
+  max-width: 1200px; /* Center navbar in the middle */
+  margin: 0 auto;
+}
+
+.navbar-title {
+  font-size: 1.5em;
+  font-weight: bold;
+}
+
+.navbar-buttons button {
+  margin-left: 10px;
+  padding: 8px 16px;
+  background-color: rgba(49, 49, 214, 0.863);
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+  color: white;
+}
+.navbar-buttons {
+  display: flex;
+}
+
+.navbar-buttons button:hover {
+  background-color: rgba(49, 49, 214, 0.863);
+}
+
+/* Main Container */
+.main-container {
+  display: flex;
+  flex-grow: 1;
+  padding: 20px;
+  height: 90vh;
+}
+
+/* Sidebar */
+.sidebar {
+  position: fixed;
+  top: 60px; /* Pushes sidebar below navbar */
+  left: 0;
+  width: 18vw; /* Adjust width */
+  height: calc(100vh - 60px); /* Full height minus navbar */
+  background: #f8f9fa;
+  padding: 20px;
+  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+  overflow-y: none; /* Allows scrolling if content is long */
+  display: flex;
+  flex-direction: column;
+  gap: 15rem;
+}
+.sidebar-top {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.menu-item {
+  display: flex;
+  align-items: center;
+  padding: 10px 0;
+  cursor: pointer;
+  border-radius: 8px;
+}
+
+.menu-item:hover {
+  background-color: rgba(49, 49, 214, 0.863);
+  color: white !important;
+}
+.menu-item span:hover {
+  color: white;
+}
+
+.menu-icon img {
+  width: 20px;
+  height: 20px;
+  margin-right: 10px;
+}
+
+.sidebar .menu-item span {
+  font-size: 1em;
+}
+
+/* User Info Section */
+.sidebar-bottom {
+  display: flex;
+  gap: 0.5rem;
+}
+.user-info {
+  flex-grow: 1;
+  padding: 20px;
+  background-color: #fafafa;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+.user-avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+*/
+
+/* User Details */
+/* .user-details {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin-left: 10px;
+  text-align: right;
+}
+
+.user-name {
+  font-size: 16px;
+  font-weight: bold;
+  color: #333;
+}
+
+.user-location {
+  font-size: 14px;
+  color: #666;
+} */
+
+/* Down Arrow */
+/* .dropdown-arrow {
+  margin-left: 10px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.cards-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  padding: 20px;
+}
+
+.applicant-card {
+  background: white;
+  border-radius: 10px;
+  padding: 15px;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+} */
+
+/* .card-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.profile-img {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+}
+
+.name-section {
+  flex-grow: 1;
+}
+
+.applicant-name {
+  font-weight: bold;
+  color: black;
+}
+
+.match-badge {
+  padding: 5px 10px;
+  border-radius: 10px;
+  font-size: 14px;
+  text-align: center;
+  font-weight: bold;
+}
+
+.green {
+  background: green;
+  color: white;
+}
+
+.grey {
+  background: grey;
+  color: white;
+}
+
+.refresh-btn {
+  background: blue;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  cursor: pointer;
+}
+
+.card-details {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 10px;
+}
+
+.location {
+  color: blue;
+}
+
+.job-type {
+  color: darkgray;
+}
+
+.separator {
+  margin: 10px 0;
+}
+
+.unique-id {
+  background: grey;
+  color: white;
+  padding: 5px;
+  border-radius: 5px;
+  text-align: center;
+  font-size: 14px;
+}
+
+.sidebar-bottom {
+  display: flex;
+  align-items: center;
+  padding: 15px;
+  background: #f8f9fa;
+  border-top: 1px solid #ddd;
+}
+
+.user-avatar img {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-right: 12px;
+}
+
+.user-details {
+  flex-grow: 1;
+}
+
+.user-name {
+  font-weight: bold;
+  font-size: 16px;
+}
+
+.user-location {
+  font-size: 14px;
+  color: #555;
+}
+
+.dropdown-arrow {
+  font-size: 18px;
+  color: #555;
+} */
+/* //---------------------------------- */
+/* Container Layout */
+.container {
+  display: flex;
+  height: 100vh;
+  overflow: hidden;
+  flex-direction: column;
+}
+
+/* Top Navbar */
+.navbar1 {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: white;
+  color: grey;
+  padding: 10px 20px;
+}
+
+/* Search Button Styling */
+.search-btn {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: #007bff;
+  color: white;
+  padding: 6px 10px;
+  border: none;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+/* Container for Sidebar & Content */
+.main-content {
+  display: flex;
+  flex: 1;
+  margin-top: 50px; /* Adjust to match navbar height */
+  height: calc(100vh - 50px);
+  overflow: hidden;
+}
+
+/* Left Sidebar (Fixed, starts after navbar) */
+.left-sidebar {
+  width: 250px;
+  background: #f8f9fa;
+  height: 90%;
+  position: fixed;
+  top: 50px; /* Below navbar */
+  left: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 1rem;
+  border-right: 1px solid #ccc;
+  overflow-y: auto;
+}
+
+.sidebar-top .menu-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+/* Right Content (Scrollable) */
+.right-content {
+  flex: 1;
+  margin-left: 250px;
+  overflow-y: auto;
+  padding: 20px;
+}
+
+.applicants-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+  margin-bottom: 50px;
+}
+
+.applicant-card {
+  background: rgba(217, 217, 217, 0.3);
+  border: 1.88px solid #e8e8e8;
+  border-radius: 35px;
+  padding: 30px;
+}
+
+.card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 20px;
+}
+
+.profile-section {
+  display: flex;
+  gap: 20px;
+}
+
+.profile-image {
+  width: 5rem;
+  height: 5rem;
+  border-radius: 50%;
+}
+
+.profile-info h3 {
+  font-size: 1.2rem !important;
+  font-weight: 700;
+  margin-bottom: 5px;
+}
+
+.match-badge {
+  padding: 11px 19px;
+  border-radius: 8px;
+  color: white;
+  font-size: 1rem !important;
+  font-weight: 700;
+}
+
+.match-badge.high {
+  background: #08c356;
+}
+
+.match-badge.medium {
+  background: #0a65cc;
+}
+
+.match-badge.low {
+  background: #d60000;
+}
+
+.message-icon {
+  width: 2.5rem !important;
+  height: 2.5rem !important;
+  background: #0a65cc;
+  border: 3.5px solid #fefefe;
+  border-radius: 50%;
+  color: white;
+  cursor: pointer;
+}
+
+.applicant-description {
+  font-size: 1.1rem !important;
+  color: #4a4a4a;
+  margin-bottom: 20px;
+}
+
+.see-more {
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.divider {
+  height: 3px;
+  background: rgba(151, 151, 151, 0.2);
+  margin: 20px 0;
+}
+
+.location-type {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.info-item {
+  display: flex;
+  gap: 10px;
+  font-size: 22.51px;
+}
+
+.info-item .label {
+  color: #4a4a4a;
+}
+
+.info-item .value {
+  font-weight: 700;
+}
+
+.skills-section h4 {
+  font-size: 22.51px;
+  font-weight: 700;
+  color: #4a4a4a;
+  margin-bottom: 15px;
+}
+
+.skills-list {
+  display: flex;
+  gap: 15px;
+}
+
+.skill-pill {
+  padding: 10px 20px;
+  background: white;
+  border: 3px solid #656565;
+  border-radius: 15px;
+  font-size: 22.51px;
+  color: #4a4a4a;
+}
+
+.user-avatar {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+}
+/* Applicant.css */
+
+.job-details {
+  margin-bottom: 50px;
+  width: 90% !important;
+  margin-left: 5.5rem;
+  display: flex;
+}
+.job-details-right {
+  margin-top: 2rem;
+}
+
+.job-details h1 {
+  font-size: 2.2rem !important;
+  font-weight: 700;
+  color: #000300;
+  margin-bottom: 1rem !important;
+}
+
+.job-description {
+  font-size: 22.5px;
+  line-height: 1.5;
+  margin-bottom: 20px;
+}
+
+.requirements {
+  font-size: 22.5px;
+  margin-bottom: 30px;
+}
+
+.requirements strong {
+  font-weight: 700;
+  display: block;
+  margin-bottom: 10px;
+}
+
+.requirements ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+.skillset-section h2 {
+  font-size: 19.44px;
+  font-weight: 800;
+  color: #18191c;
+  margin-bottom: 20px;
+}
+
+.skills-container {
+  display: flex;
+  gap: 15px;
+  flex-wrap: wrap;
+  margin-bottom: 30px;
+}
+
+.skill-tag {
+  background: #d60000;
+  color: white;
+  padding: 10px 25px;
+  border-radius: 20px;
+  font-size: 1.2rem !important;
+}
+
+.job-meta {
+  display: flex;
+  gap: 50px;
+}
+
+.meta-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.meta-label {
+  font-size: 19.44px;
+  font-weight: 800;
+  color: #18191c;
+}
+
+.meta-value {
+  font-size: 1.2rem !important;
+  padding: 10px 25px;
+  border: 2px solid #656565;
+  border-radius: 20px;
+}

@@ -8,8 +8,8 @@ import { useLocation, useNavigate } from "react-router-dom";
 import OutsideClickHandler from "./OutsideClickHandler"; // Ensure this component is correctly implemented
 import companyLogo from "../../assets/companyLogo.svg";
 
-const Navbar = ({ language = "English", setLanguage }) => { // Set default language to "English"
-
+const Navbar = ({ language = "English", setLanguage }) => {
+  // Set default language to "English"
 
   const location = useLocation();
   const navigate = useNavigate();
@@ -99,8 +99,8 @@ const Navbar = ({ language = "English", setLanguage }) => { // Set default langu
   // Safely access the current translations
   const currentTranslations = translations[language] || translations["English"];
 
-    console.log("Current Translations:", currentTranslations);
-    console.log("Home Translation:", currentTranslations.home);
+  console.log("Current Translations:", currentTranslations);
+  console.log("Home Translation:", currentTranslations.home);
 
   useEffect(() => {
     if (location?.pathname === "/landing") {
@@ -410,4 +410,3 @@ const Navbar = ({ language = "English", setLanguage }) => { // Set default langu
 };
 
 export default Navbar;
-

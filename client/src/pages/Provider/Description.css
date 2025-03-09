@@ -41,7 +41,7 @@
 .skillset-section h2 {
   font-size: 19.44px;
   font-weight: 800;
-  color: #18191C;
+  color: #18191c;
   margin-bottom: 20px;
 }
 
@@ -53,7 +53,7 @@
 }
 
 .skill-tag {
-  background: #D60000;
+  background: #d60000;
   color: white;
   padding: 10px 25px;
   border-radius: 20px;
@@ -74,7 +74,7 @@
 .meta-label {
   font-size: 19.44px;
   font-weight: 800;
-  color: #18191C;
+  color: #18191c;
 }
 
 .meta-value {
@@ -93,8 +93,8 @@
 }
 
 .applicant-card {
-  background: rgba(217, 217, 217, 0.30);
-  border: 1.88px solid #E8E8E8;
+  background: rgba(217, 217, 217, 0.3);
+  border: 1.88px solid #e8e8e8;
   border-radius: 35px;
   padding: 30px;
 }
@@ -132,22 +132,22 @@
 }
 
 .match-badge.high {
-  background: #08C356;
+  background: #08c356;
 }
 
 .match-badge.medium {
-  background: #0A65CC;
+  background: #0a65cc;
 }
 
 .match-badge.low {
-  background: #D60000;
+  background: #d60000;
 }
 
 .message-icon {
   width: 56px;
   height: 56px;
-  background: #0A65CC;
-  border: 3.5px solid #FEFEFE;
+  background: #0a65cc;
+  border: 3.5px solid #fefefe;
   border-radius: 50%;
   color: white;
   cursor: pointer;
@@ -155,7 +155,7 @@
 
 .applicant-description {
   font-size: 22px;
-  color: #4A4A4A;
+  color: #4a4a4a;
   margin-bottom: 20px;
 }
 
@@ -183,7 +183,7 @@
 }
 
 .info-item .label {
-  color: #4A4A4A;
+  color: #4a4a4a;
 }
 
 .info-item .value {
@@ -193,7 +193,7 @@
 .skills-section h4 {
   font-size: 22.51px;
   font-weight: 700;
-  color: #4A4A4A;
+  color: #4a4a4a;
   margin-bottom: 15px;
 }
 
@@ -208,7 +208,7 @@
   border: 3px solid #656565;
   border-radius: 15px;
   font-size: 22.51px;
-  color: #4A4A4A;
+  color: #4a4a4a;
 }
 
 /* Pagination */
@@ -218,7 +218,8 @@
   gap: 14px;
 }
 
-.page-btn, .nav-btn {
+.page-btn,
+.nav-btn {
   width: 52.5px;
   height: 52.5px;
   border-radius: 50%;
@@ -231,15 +232,15 @@
 }
 
 .page-btn {
-  background: #D3D3D3;
+  background: #d3d3d3;
   color: white;
 }
 
 .page-btn.active {
-  background: #292D32;
+  background: #292d32;
 }
 
 .nav-btn {
-  background: #0A65CC;
-  color: #FEFEFE;
+  background: #0a65cc;
+  color: #fefefe;
 }

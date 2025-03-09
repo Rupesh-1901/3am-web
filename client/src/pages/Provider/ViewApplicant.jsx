@@ -1,7 +1,7 @@
 /* eslint-disable no-unused-vars */
 // src/pages/Provider/ViewApplicants.jsx
 
-import React , { useState } from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import framecard from "../../assets/images/applicantscard.png";
 import Premium from "./Premium";
@@ -230,7 +230,7 @@ const ViewApplicants = () => {
         <div
           style={{
             display: "grid",
-            gridTemplateColumns: "repeat(auto-fill, minmax(250px, 1fr))",
+            gridTemplateColumns: "repeat(auto-fill, minmax(350px, 1fr))",
             gap: "20px",
           }}
         >
@@ -244,8 +244,10 @@ const ViewApplicants = () => {
                 style={{
                   display: "flex",
                   flexDirection: "column",
+                  height: "16rem",
                   border: "1px solid #e8e8e8",
-                  borderRadius: "8px",
+                  borderRadius: "12px",
+                  gap: "2.5rem",
                   padding: "20px",
                   transition: "box-shadow 0.3s",
                   backgroundColor: "#fafafa",
@@ -258,77 +260,84 @@ const ViewApplicants = () => {
                   e.currentTarget.style.boxShadow = "none";
                 }}
               >
-                {/* Card Image */}
-                <div
-                  style={{
-                    display: "flex",
-                    justifyContent: "center",
-                    marginBottom: "15px",
-                  }}
-                >
-                  <img
-                    src={framecard}
-                    alt="Job Icon"
-                    style={{ width: "50px", height: "50px" }}
-                  />
-                </div>
-                {/* Card Content */}
-                <div style={{ flex: "1" }}>
-                  <h2
-                    style={{
-                      fontSize: "20px",
-                      margin: "0 0 10px 0",
-                      color: "#333",
-                    }}
-                  >
-                    {card.title}
-                  </h2>
-                  <p style={{ color: "#555", margin: "0 0 10px 0" }}>
-                    {card.location}
-                  </p>
+                <div style={{ display: "flex", gap: "1rem" }}>
+                  {" "}
                   <div
                     style={{
                       display: "flex",
-                      alignItems: "center",
-                      marginBottom: "10px",
+                      justifyContent: "center",
+                      marginBottom: "15px",
                     }}
                   >
-                    <span
+                    <img
+                      src={framecard}
+                      alt="Job Icon"
+                      style={{ height: "6rem", width: "7rem" }}
+                    />
+                  </div>
+                  {/* Card Content */}
+                  <div style={{ flex: "1" }}>
+                    <h2
                       style={{
-                        display: "inline-block",
-                        width: "10px",
-                        height: "10px",
-                        borderRadius: "50%",
-                        backgroundColor:
-                          card.status === "Active" ? "green" : "red",
-                        marginRight: "8px",
+                        fontSize: "20px",
+                        margin: "0 0 10px 0",
+                        color: "#333",
                       }}
-                    ></span>
-                    <span style={{ color: "#555", fontSize: "14px" }}>
-                      {card.status}
-                    </span>
+                    >
+                      {card.title}
+                    </h2>
+                    <p style={{ color: "#555", margin: "0 0 10px 0" }}>
+                      {card.location}
+                    </p>
+                    <div
+                      style={{
+                        display: "flex",
+                        alignItems: "center",
+                        marginBottom: "10px",
+                      }}
+                    >
+                      <span
+                        style={{
+                          display: "inline-block",
+                          width: "10px",
+                          height: "10px",
+                          borderRadius: "50%",
+                          backgroundColor:
+                            card.status === "Active" ? "green" : "red",
+                          marginRight: "8px",
+                        }}
+                      ></span>
+                      <span style={{ color: "#555", fontSize: "14px" }}>
+                        {card.status}
+                      </span>
+                    </div>
+                    <p
+                      style={{
+                        color: "#777",
+                        fontSize: "14px",
+                        marginBottom: "10px",
+                      }}
+                    >
+                      Posted on {card.postedDate}
+                    </p>
                   </div>
-                  <p
-                    style={{
-                      color: "#777",
-                      fontSize: "14px",
-                      marginBottom: "10px",
-                    }}
-                  >
-                    Posted on {card.postedDate}
-                  </p>
-                  <div
-                    style={{
-                      backgroundColor: "#f0f0f0",
-                      padding: "8px 12px",
-                      borderRadius: "4px",
-                      display: "inline-block",
-                      fontSize: "14px",
-                      color: "#333",
-                    }}
-                  >
-                    {card.applications} Applications
-                  </div>
+                </div>
+                {/* Card Image */}
+                <div
+                  style={{
+                    backgroundColor: "#f0f0f0",
+                    padding: "8px 12px",
+                    borderRadius: "4px",
+                    display: "flex",
+                    justifyContent: "center",
+                    alignItems: "center",
+                    fontSize: "14px",
+                    color: "#333",
+                  }}
+                >
+                  <span style={{ margin: "auto", alignContent: "center" }}>
+                    <strong>{card.applications} Applications</strong>
+                  </span>
                 </div>
               </div>
             </Link>

@@ -9,13 +9,14 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "@emotion/react": "^11.13.3",
-    "@emotion/styled": "^11.13.0",
+    "@emotion/react": "^11.14.0",
+    "@emotion/styled": "^11.14.0",
     "@mui/icons-material": "^6.1.1",
-    "@mui/material": "^6.1.1",
+    "@mui/material": "^6.4.7",
     "@reduxjs/toolkit": "^2.2.7",
     "antd": "^5.24.1",
     "axios": "^1.7.7",
+    "compute-scroll-into-view": "^3.1.1",
     "date-fns": "^3.6.0",
     "formik": "^2.4.6",
     "localforage": "^1.10.0",

@@ -1,25 +1,40 @@
-import React from "react";
+import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import "./CoordinatorApplicantsPage.css";
+import "./CoordLandingPage.css";
+import { Link } from "react-router-dom";
+import framecard from "../../assets/images/applicantscard.png";
+
 import Navbar from "../../components/ui/Navbar";
 import RupeshBhai from "../../assets/RupeshBhai.svg";
 import searchButton from "../../assets/coordsrch.svg";
 import dashboard from "../../assets/coordDashBoard.svg";
 import Location from "../../assets/coordLocation.svg";
-import DatePosted from "../../assets//coordDatePosted.svg";
+import DatePosted from "../../assets/coordDatePosted.svg";
 import oldtonew from "../../assets/coordOldtoNew.svg";
 import company from "../../assets/coordCompany.svg";
-import help from "../../assets/coordHelp.svg";
-import copy from "../../assets/copySymbol.svg";
-import { useState } from "react";
+import Tick from "../../assets/TickMark.svg";
 import rtArr from "../../assets/coordRightarr.svg";
+import copy from "../../assets/copySymbol.svg";
+import help from "../../assets/coordHelp.svg";
 import blueRedirect from "../../assets/redirectSymbolBlue.svg";
 import RedRedirect from "../../assets/redirectSymbolRed.svg";
-import separator from "../../assets/coordVerticalSeparator.svg";
-import { useNavigate } from "react-router-dom";
 import menuIcon from "../../assets/menu.svg";
+import separator from "../../assets/coordLandingPageSeparator.svg";
+import coordApplicants from "../../assets/coordinatorApplicants.svg";
+import coordJobs from "../../assets/coordinatorJobs.svg";
+import coordActive from "../../assets/coordinatorLandingActive.svg";
 
-const CoordinatorIndApplicant = () => {
+const IndividualApplicant = () => {
+  const navigate = useNavigate();
+  const [totalApplicants] = useState(5243);
+  const [totalJobs] = useState(1893);
+  const [activeNow] = useState(189);
   const [isSidebarOpen, setIsSidebarOpen] = useState(true);
+
+  const toggleSidebar = () => {
+    setIsSidebarOpen(!isSidebarOpen);
+  };
   const jobDetails = {
     title: "Rupesh Mishra",
     description: "Full Stack Developer",
@@ -38,9 +53,6 @@ const CoordinatorIndApplicant = () => {
     ],
     location: "Muskat",
     salary: "55k-70k + Incentives",
-  };
-  const toggleSidebar = () => {
-    setIsSidebarOpen(!isSidebarOpen);
   };
   const applicants = [
     {
@@ -111,143 +123,138 @@ const CoordinatorIndApplicant = () => {
       skills: ["Sketch", "Indesign", "Adobe Suite"],
     },
   ];
-  const navigate = useNavigate();
 
   return (
     <div className="container">
-      {/* <div style={{ width: "100%", position: "sticky", top: "0", zIndex: "1000" }}>
-				<Navbar />
-			</div> */}
-
-      {/* Left Sidebar (Fixed) */}
-
-      {isSidebarOpen ? (
-        <aside
-          className={`left-sidebar ${isSidebarOpen ? "open" : "closed"}`}
-          style={{ overflow: "auto", backgroundColor: "#f9f9f9" }}
-        >
-          <button
-            onClick={toggleSidebar}
-            class="close-btn"
-            style={{
-              height: "1vw",
-
-              zIndex: "1001",
-              width: "2vw",
-            }}
+      {/* Sidebar */}
+      <div className="aside-cont" style={{ width: "18%" }}>
+        {isSidebarOpen ? (
+          <aside
+            className={`left-sidebar ${isSidebarOpen ? "open" : "closed"}`}
+            style={{ overflow: "auto" }}
           >
-            <img
-              src={menuIcon} // Replace with your menu icon src
-              alt="Menu"
-              style={{ height: "2vw", width: "2vw" }}
-            />
-          </button>
+            <button
+              onClick={toggleSidebar}
+              class="close-btn"
+              style={{
+                height: "1vw",
 
-          <div className="sidebar-top">
-            <div className="menu-item" style={{ marginTop: "2rem" }}>
-              <img src={dashboard} alt="Dashboard Icon" />
-              <span>Dashboard</span>
-            </div>
-            <div className="menu-item">
-              <img src={Location} alt="Location Icon" />
-              <span>Location</span>
-            </div>
-            <div className="menu-item">
-              <img src={DatePosted} alt="Date Icon" />
-              <span>Date Posted</span>
-            </div>
-            <div className="menu-item">
-              <img src={oldtonew} alt="Sort Icon" />
-              <span>Oldest to Newest</span>
-            </div>
-            <div className="menu-item">
-              <img src={company} alt="Company Icon" />
-              <span>Company</span>
-            </div>
-            <div className="menu-item">
-              <img src={help} alt="Help Icon" />
-              <span>Help</span>
-            </div>
-          </div>
-        </aside>
-      ) : (
-        <div
-          className="mini-sidebar"
-          style={{
-            zIndex: 100,
-            width: "3vw", // Slightly wider than just a button
-            backgroundColor: "#f9f9f9", // Dark background like in the image
-            height: "100vh", // Full height
-            display: "flex",
-            flexDirection: "column",
-            alignItems: "center",
-            padding: "1rem 0",
-            boxShadow: "2px 0px 5px rgba(0,0,0,0.5)",
-          }}
-        >
-          {/* Menu Button */}
-          <button
-            className="menu-btn"
-            onClick={toggleSidebar}
-            style={{
-              background: "transparent",
-              border: "none",
-              cursor: "pointer",
-            }}
-          >
-            <img
-              src={menuIcon} // Replace with your menu icon src
-              alt="Menu"
-              style={{ height: "2vw", width: "2vw" }}
-            />
-          </button>
+                zIndex: "1001",
+                width: "2vw",
+              }}
+            >
+              <img
+                src={menuIcon} // Replace with your menu icon src
+                alt="Menu"
+                style={{ height: "2vw", width: "2vw" }}
+              />
+            </button>
 
-          {/* Additional Icons/Elements */}
+            <div className="sidebar-top">
+              <div className="menu-item" style={{ marginTop: "2rem" }}>
+                <img src={dashboard} alt="Dashboard Icon" />
+                <span>Dashboard</span>
+              </div>
+              <div className="menu-item">
+                <img src={Location} alt="Location Icon" />
+                <span>Location</span>
+              </div>
+              <div className="menu-item">
+                <img src={DatePosted} alt="Date Icon" />
+                <span>Date Posted</span>
+              </div>
+              <div className="menu-item">
+                <img src={oldtonew} alt="Sort Icon" />
+                <span>Oldest to Newest</span>
+              </div>
+              <div className="menu-item">
+                <img src={company} alt="Company Icon" />
+                <span>Company</span>
+              </div>
+              <div className="menu-item">
+                <img src={help} alt="Help Icon" />
+                <span>Help</span>
+              </div>
+            </div>
+          </aside>
+        ) : (
           <div
-            className="mini-icons"
+            className="mini-sidebar"
             style={{
+              zIndex: 100,
+              width: "3vw", // Slightly wider than just a button
+              backgroundColor: "#f9f9f9", // Dark background like in the image
+              height: "100vh", // Full height
               display: "flex",
               flexDirection: "column",
-              gap: "1rem",
-              marginTop: "1rem",
+              alignItems: "center",
+              padding: "1rem 0",
+              boxShadow: "2px 0px 5px rgba(0,0,0,0.5)",
             }}
           >
-            <img
-              src={dashboard} // Placeholder for a profile/user icon
-              alt="Profile"
-              style={{ height: "2vw", width: "2vw", borderRadius: "50%" }}
-            />
-            <img
-              src={Location} // Placeholder for settings icon
-              alt="Settings"
-              style={{ height: "2vw", width: "2vw" }}
-            />
-            <img
-              src={DatePosted} // Placeholder for settings icon
-              alt="Settings"
-              style={{ height: "2vw", width: "2vw" }}
-            />
-            <img
-              src={oldtonew} // Placeholder for settings icon
-              alt="Settings"
-              style={{ height: "2vw", width: "2vw" }}
-            />
-            <img
-              src={company} // Placeholder for settings icon
-              alt="Settings"
-              style={{ height: "2vw", width: "2vw" }}
-            />
-            <img
-              src={help} // Placeholder for settings icon
-              alt="Settings"
-              style={{ height: "2vw", width: "2vw" }}
-            />
-          </div>
-        </div>
-      )}
+            {/* Menu Button */}
+            <button
+              className="menu-btn"
+              onClick={toggleSidebar}
+              style={{
+                background: "transparent",
+                border: "none",
+                cursor: "pointer",
+              }}
+            >
+              <img
+                src={menuIcon} // Replace with your menu icon src
+                alt="Menu"
+                style={{ height: "2vw", width: "2vw" }}
+              />
+            </button>
 
-      {/* Right Content (Scrollable) */}
-      <div className="right-content">
+            {/* Additional Icons/Elements */}
+            <div
+              className="mini-icons"
+              style={{
+                display: "flex",
+                flexDirection: "column",
+                gap: "1rem",
+                marginTop: "1rem",
+              }}
+            >
+              <img
+                src={dashboard} // Placeholder for a profile/user icon
+                alt="Profile"
+                style={{ height: "2vw", width: "2vw", borderRadius: "50%" }}
+              />
+              <img
+                src={Location} // Placeholder for settings icon
+                alt="Settings"
+                style={{ height: "2vw", width: "2vw" }}
+              />
+              <img
+                src={DatePosted} // Placeholder for settings icon
+                alt="Settings"
+                style={{ height: "2vw", width: "2vw" }}
+              />
+              <img
+                src={oldtonew} // Placeholder for settings icon
+                alt="Settings"
+                style={{ height: "2vw", width: "2vw" }}
+              />
+              <img
+                src={company} // Placeholder for settings icon
+                alt="Settings"
+                style={{ height: "2vw", width: "2vw" }}
+              />
+              <img
+                src={help} // Placeholder for settings icon
+                alt="Settings"
+                style={{ height: "2vw", width: "2vw" }}
+              />
+            </div>
+          </div>
+        )}
+      </div>
+
+      <div className="right-content" style={{ flexGrow: "1", width: "82%" }}>
         <nav className="navbar1" style={{ marginBottom: "2rem", width: "90%" }}>
           <span
             className="navbar-title"
@@ -258,7 +265,7 @@ const CoordinatorIndApplicant = () => {
           <div className="navbar-buttons">
             <button
               className="dashboard-btn"
-              onClick={() => navigate("/coordinator/applicants-page")}
+              onClick={() => navigate("/coordinator/applicants-approval")}
             >
               Back &#8594;
             </button>
@@ -272,7 +279,7 @@ const CoordinatorIndApplicant = () => {
             </button>
           </div>
         </nav>
-        <div className="job-details">
+        <div className="job-details" style={{ borderBottom: "1px solid #ccc" }}>
           <div className="job-detail-left">
             <h1>{jobDetails.title}</h1>
             <p
@@ -416,7 +423,7 @@ const CoordinatorIndApplicant = () => {
               </div>
             </div>
 
-            <div className="job-meta">
+            <div className="job-meta" style={{ marginBottom: "2rem" }}>
               <div className="meta-item">
                 <span className="meta-label" style={{ color: "black" }}>
                   Location
@@ -433,6 +440,7 @@ const CoordinatorIndApplicant = () => {
               </div>
             </div>
           </div>
+
           <div className="job-details-right">
             <div
               className="profile-store"
@@ -453,104 +461,55 @@ const CoordinatorIndApplicant = () => {
           </div>
         </div>
         <div
-          className="action-buttons"
+          className="second-cont"
           style={{
             display: "flex",
-
-            gap: "20px",
-            marginTop: "20px",
-            marginLeft: "5rem",
-            marginBottom: "2rem",
+            gap: "1rem",
+            alignItems: "center",
+            justifyContent: "flex-end",
+            marginTop: "1rem",
+            marginBottom: "1rem",
           }}
         >
-          <button
-            style={{
-              backgroundColor: "green",
-              color: "white",
-              padding: "10px 20px",
-              border: "none",
-              borderRadius: "5px",
-              cursor: "pointer",
-              fontSize: "1.4rem",
-            }}
-          >
-            Approve
-          </button>
-          <button
-            style={{
-              backgroundColor: "red",
-              color: "white",
-              padding: "10px 20px",
-              border: "none",
-              borderRadius: "5px",
-              cursor: "pointer",
-              fontSize: "1.4rem",
-            }}
-          >
-            Reject
-          </button>
-        </div>
-        <div
-          style={{
-            margin: "auto",
-            display: "flex",
-            justifyContent: "center",
-            marginBottom: "1.8rem",
-          }}
-        >
-          <p style={{ color: "lightgray" }}>
-            ---------------------------------------------------------------------------------------------------------------------
-          </p>
-        </div>
-
-        {/* <div className="separator">
-          <img
-            src={separator}
-            alt=""
-            style={{ color: "grey", height: "21px", width: "8vw" }}
-          />
-        </div> */}
-        <div className="applicants-grid">
-          {applicants.map((applicant) => (
-            <div key={applicant.id} className="applicant-card">
-              <div className="card-header" style={{ marginBottom: "0" }}>
-                <div className="profile-section">
-                  <img
-                    src={RupeshBhai}
-                    alt="Profile"
-                    className="profile-image"
-                    style={{ width: "5rem", height: "5rem" }}
-                  />
-                  <div className="profile-info">
-                    <h3>{applicant.name}</h3>
-                    <div className={`match-badge ${applicant.status}`}>
-                      {applicant.matchPercentage}% match
-                    </div>
-                  </div>
-                </div>
-                <button className="message-icon">
-                  <img
-                    src={rtArr}
-                    alt="Message"
-                    style={{ height: "2rem", width: "2rem", margin: "auto" }}
-                  />
-                </button>
+          <div className="first-btn">
+            <button
+              style={{
+                backgroundColor: "#d3d3d3", // Light grey
+                border: "1px solid #808080", // Border color
+                padding: "8px 16px",
+                borderRadius: "4px",
+                cursor: "pointer",
+                transition: "background-color 0.3s ease",
+              }}
+              onMouseEnter={(e) => (e.target.style.backgroundColor = "#a9a9a9")} // Dark grey on hover
+              onMouseLeave={(e) => (e.target.style.backgroundColor = "#d3d3d3")} // Reset on mouse leave
+            >
+              <div style={{ display: "flex", gap: "1rem" }}>
+                <span style={{ display: "block" }}> Approved</span>{" "}
+                <img src={Tick} />
               </div>
-
-              <div
-                className="skills-section"
-                style={{
-                  display: "flex",
-                  gap: "0.5rem",
-                  justifyContent: "center",
-                }}
-              ></div>
-            </div>
-          ))}
+            </button>
+          </div>
+          <div className="second-btn">
+            <button
+              style={{
+                backgroundColor: "white",
+                border: "1px solid #808080", // Border color
+                padding: "8px 16px",
+                borderRadius: "4px",
+                cursor: "pointer",
+                transition: "background-color 0.3s ease",
+              }}
+              onMouseEnter={(e) => (e.target.style.backgroundColor = "#d3d3d3")} // Grey on hover
+              onMouseLeave={(e) => (e.target.style.backgroundColor = "white")} // Reset on mouse leave
+            >
+              <span>Discard</span>
+            </button>
+          </div>
         </div>
       </div>
     </div>
   );
 };
 
-export default CoordinatorIndApplicant;
+export default IndividualApplicant;

@@ -98,7 +98,6 @@
   background-color: rgba(49, 49, 214, 0.863);
   color: white !important;
 }
-
 .menu-item span:hover {
   color: white;
 }
@@ -118,7 +117,6 @@
   display: flex;
   gap: 0.5rem;
 }
-
 .user-info {
   flex-grow: 1;
   padding: 20px;
@@ -127,14 +125,12 @@
   align-items: center;
   justify-content: flex-start;
 }
-
 .user-avatar {
   width: 40px;
   height: 40px;
   border-radius: 50%;
   object-fit: cover;
 }
-
 /* //---------------------------------- */
 /* Container Layout */
 .container {

@@ -51,6 +51,37 @@ const router = new createBrowserRouter([
       },
     ],
   },
+  {
+    element: <NoAuth />,
+    children: [
+      {
+        path: "/auth",
+        element: <AuthPage />,
+        children: [
+          {
+            path: "login",
+            element: <LoginPage />,
+          },
+          {
+            path: "register",
+            element: <RegisterPage />,
+          },
+          {
+            path: "forgot-password",
+            element: <ForgotPassword />,
+          },
+        ],
+      },
+      {
+        path: "/reset-password",
+        element: <ResetPassword />,
+      },
+      {
+        path: "/landing",
+        element: <LandingPage />,
+      },
+    ],
+  },
 
   {
     element: <AuthRequired />,

@@ -1,129 +1,116 @@
-/* eslint-disable no-unused-vars */
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
+import announcementLanding from "../../assets/announcementLanding.svg";
+import "./ProfilePage.css"; // Import CSS
 
 const ProfilePage = () => {
-  // State variables for form fields
-  const [companyName, setCompanyName] = useState("Your Company Name");
-  const [companyDetails, setCompanyDetails] = useState(
-    "Detailed information about your company."
-  );
+  const [formData, setFormData] = useState({
+    companyName: "",
+    tagline: "",
+    description: "",
+    industry: "",
+    location: "",
+    companySize: "",
+    yearEstablished: "",
+    website: "",
+    socialMedia: "",
+    contactInfo: "",
+  });
 
-  // Handler for form submission
-  const handleSave = (e) => {
+  const [logo, setLogo] = useState(null);
+  const [coverImage, setCoverImage] = useState(null);
+  const [gstCertificate, setGstCertificate] = useState(null);
+  const [itReturn, setItReturn] = useState(null);
+  const [isFormValid, setIsFormValid] = useState(false);
+
+  useEffect(() => {
+    const allFieldsFilled =
+      Object.values(formData).every((value) => value.trim() !== "") &&
+      logo &&
+      coverImage &&
+      gstCertificate &&
+      itReturn;
+    setIsFormValid(allFieldsFilled);
+  }, [formData, logo, coverImage, gstCertificate, itReturn]);
+
+  const handleChange = (e) => {
+    setFormData({ ...formData, [e.target.name]: e.target.value });
+  };
+
+  const handleFileChange = (e, setter) => {
+    setter(e.target.files[0]);
+  };
+
+  const handleSubmit = (e) => {
     e.preventDefault();
-    // Implement save functionality here (e.g., API call)
-    console.log("Saved:", { companyName, companyDetails });
-    alert("Profile information saved successfully!");
-  };
-
-  // Inline styles
-  const containerStyle = {
-    maxWidth: "600px",
-    margin: "50px auto",
-    padding: "20px",
-    border: "1px solid #ccc",
-    borderRadius: "8px",
-    boxShadow: "0 2px 5px rgba(0,0,0,0.1)",
-    fontFamily: "Arial, sans-serif",
-    backgroundColor: "#f9f9f9",
-  };
-
-  const headerStyle = {
-    textAlign: "center",
-    marginBottom: "20px",
-    color: "#333",
-  };
-
-  const formGroupStyle = {
-    marginBottom: "15px",
-  };
-
-  const labelStyle = {
-    display: "block",
-    marginBottom: "5px",
-    fontWeight: "bold",
-    color: "#555",
-  };
-
-  const inputStyle = {
-    width: "100%",
-    padding: "10px",
-    borderRadius: "4px",
-    border: "1px solid #ccc",
-    boxSizing: "border-box",
-  };
-
-  const textareaStyle = {
-    ...inputStyle,
-    height: "100px",
-    resize: "vertical",
-  };
-
-  const buttonStyle = {
-    padding: "10px 20px",
-    backgroundColor: "#28a745",
-    color: "#fff",
-    border: "none",
-    borderRadius: "4px",
-    cursor: "pointer",
-  };
-
-  const buttonHoverStyle = {
-    backgroundColor: "#218838",
+    console.log("Form submitted", formData, {
+      logo,
+      coverImage,
+      gstCertificate,
+      itReturn,
+    });
   };
 
   return (
-    <div style={containerStyle}>
-      <h2 style={headerStyle}>Brand Profile</h2>
-      <form onSubmit={handleSave}>
-        <div style={formGroupStyle}>
-          <label htmlFor="companyName" style={labelStyle}>
-            Company Name
-          </label>
-          <input
-            type="text"
-            id="companyName"
-            name="companyName"
-            value={companyName}
-            onChange={(e) => setCompanyName(e.target.value)}
-            style={inputStyle}
-            required
-          />
-        </div>
+    <div className="profile-container">
+      {/* Static Image Section */}
+      <div className="image-section">
+        <img src={announcementLanding} alt="Company Branding" />
+      </div>
 
-        <div style={formGroupStyle}>
-          <label htmlFor="companyDetails" style={labelStyle}>
-            Company Details
-          </label>
-          <textarea
-            id="companyDetails"
-            name="companyDetails"
-            value={companyDetails}
-            onChange={(e) => setCompanyDetails(e.target.value)}
-            style={textareaStyle}
-            required
-          />
-        </div>
+      {/* Scrollable Form Section */}
+      <div className="form-container">
+        <h2 style={{ textAlign: "center", marginBottom: "20px", fontSize: "22px", fontWeight: "500" }}>
+          Company Registration Form
+        </h2>
+        <form onSubmit={handleSubmit}>
+          {[
+            { label: "Company Name", name: "companyName", type: "text", placeholder: "Enter company name" },
+            { label: "Tagline or Slogan", name: "tagline", type: "text", placeholder: "Enter tagline" },
+            { label: "Company Description", name: "description", type: "textarea", placeholder: "Describe the company" },
+            { label: "Industry & Specializations", name: "industry", type: "text", placeholder: "Enter industry" },
+            { label: "Headquarters/Location", name: "location", type: "text", placeholder: "Enter location" },
+            { label: "Company Size", name: "companySize", type: "number", placeholder: "Number of employees" },
+            { label: "Year Established", name: "yearEstablished", type: "number", placeholder: "Enter year" },
+            { label: "Website URL", name: "website", type: "url", placeholder: "Enter website link" },
+            { label: "Social Media Links", name: "socialMedia", type: "url", placeholder: "Enter social media links" },
+            { label: "Contact Information", name: "contactInfo", type: "text", placeholder: "Enter contact details" },
+          ].map((field, index) => (
+            <div key={index} className="input-group">
+              <label>{field.label}</label>
+              {field.type === "textarea" ? (
+                <textarea name={field.name} value={formData[field.name]} onChange={handleChange} placeholder={field.placeholder} required />
+              ) : (
+                <input type={field.type} name={field.name} value={formData[field.name]} onChange={handleChange} placeholder={field.placeholder} required />
+              )}
+            </div>
+          ))}
 
-        {/* Add more form fields as needed */}
+          {/* File Uploads */}
+          <div className="input-group">
+            <label>Logo</label>
+            <input type="file" className="file-input" onChange={(e) => handleFileChange(e, setLogo)} required />
+          </div>
 
-        <div style={{ textAlign: "center" }}>
-          <button
-            type="submit"
-            style={buttonStyle}
-            onMouseOver={(e) =>
-              (e.currentTarget.style.backgroundColor =
-                buttonHoverStyle.backgroundColor)
-            }
-            onMouseOut={(e) =>
-              (e.currentTarget.style.backgroundColor =
-                buttonStyle.backgroundColor)
-            }
-          >
-            Save Changes
+          <div className="input-group">
+            <label>Cover Image</label>
+            <input type="file" className="file-input" onChange={(e) => handleFileChange(e, setCoverImage)} required />
+          </div>
+
+          <div className="input-group">
+            <label>GST Certificate</label>
+            <input type="file" className="file-input" onChange={(e) => handleFileChange(e, setGstCertificate)} required />
+          </div>
+
+          <div className="input-group">
+            <label>IT Returns (Last Financial Year)</label>
+            <input type="file" className="file-input" onChange={(e) => handleFileChange(e, setItReturn)} required />
+          </div>
+
+          <button type="submit" disabled={!isFormValid} className="submit-button">
+            Submit
           </button>
-        </div>
-      </form>
+        </form>
+      </div>
     </div>
   );
 };

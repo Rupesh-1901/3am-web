@@ -1,0 +1,114 @@
+/* ProfilePage.css */
+.profile-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 40px;
+  padding: 20px;
+  background-color: white;
+  color: black;
+  min-height: 100vh;
+  flex-wrap: wrap; /* Allows wrapping on smaller screens */
+}
+
+/* Image Section */
+.image-section {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 300px; /* Avoids excessive height issues */
+}
+
+.image-section img {
+  width: 100%;
+  max-width: 500px;
+}
+
+/* Form Section */
+.form-container {
+  flex: 1;
+  width: 90%;
+  max-width: 600px;
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  font-weight: 400;
+  background-color: #f9f9f9;
+  max-height: 90vh;
+  overflow-y: auto;
+}
+
+/* Input Fields */
+.input-group {
+  margin-bottom: 15px;
+}
+
+.input-group label {
+  display: block;
+  font-weight: 500;
+  margin-bottom: 5px;
+  font-size: 14px;
+}
+
+.input-group input,
+.input-group textarea {
+  width: 100%;
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  font-size: 14px;
+}
+
+.input-group textarea {
+  height: 80px; /* Ensures textarea is distinguishable */
+}
+
+/* File Input */
+.file-input {
+  width: 100%;
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  font-size: 14px;
+  background-color: white;
+}
+
+/* Submit Button */
+.submit-button {
+  width: 96%;
+  padding: 12px;
+  border-radius: 5px;
+  font-size: 16px;
+  font-weight: 500;
+  border: none;
+  cursor: pointer;
+  background-color: #007bff;
+  color: white;
+  transition: background 0.3s ease;
+}
+
+.submit-button:disabled {
+  background-color: #cccccc;
+  cursor: not-allowed;
+}
+
+/* 🌟 Responsive Design */
+@media (max-width: 768px) {
+  .profile-container {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .image-section {
+    order: -1; /* Moves the image to the top on small screens */
+  }
+
+  .form-container {
+    width: 100%;
+    max-width: 90%;
+    height: auto;
+    max-height: none;
+  }
+}

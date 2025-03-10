@@ -183,10 +183,12 @@ const RegisterPage = () => {
                         <InputCustomFormik
                           name="fullName"
                           placeholder="Full Name"
+                          style={{ width: "275px" }} 
                         />
                         <InputCustomFormik
                           name="userName"
                           placeholder="Username"
+                          style={{ width: "275px" }} 
                         />
                       </div>
                       <InputCustomFormik

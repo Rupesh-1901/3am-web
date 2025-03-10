@@ -123,7 +123,7 @@ const LoginPage = () => {
 										</div>
 										<div
 											className="loginAs"
-											style={{ width: "37.5vw", padding: "0 1rem 1rem 1rem" }}
+											style={{ width: "41.7vw", padding: "0 1rem 1rem 1rem" }}
 										>
 											<div className="loginAsFont">Log in as</div>
 											<div
